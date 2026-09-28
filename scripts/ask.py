@@ -3,7 +3,7 @@ sys.path.insert(0, ".")
 
 import faiss
 from app.retrieval import retrieve
-from app.generation import generate_answer
+from app.generate_answer import generate_answer
 
 
 index = faiss.read_index("data/my_index.faiss")

@@ -1,0 +1,64 @@
+import time
+
+from dotenv import load_dotenv
+
+from app.core import TOP_K, MIN_SCORE, REFUSAL
+from app.embeddings import client
+from app.retrieval import retrieve
+
+load_dotenv()
+
+SYSTEM_PROMPT = (
+    "You are a helpful assistant. Answer the question based ONLY "
+    "on the provided context. If the context doesn't contain the "
+    f"answer, say '{REFUSAL}' "
+    "Always cite which source your answer comes from. "
+    "If the question has several parts, answer each part. "
+    "If the question is vague, say what is unclear and ask the user "
+    "to be more specific."
+)
+
+
+def safe_chat(messages, retries=3, delay=2):
+    """Appelle l'API avec quelques essais. Renvoie None si tout échoue."""
+    for attempt in range(retries):
+        try:
+            return client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=messages,
+                temperature=0,
+                max_tokens=300,
+            )
+        except Exception as e:
+            print(f"Erreur API (essai {attempt + 1}/{retries}) : {e}")
+            time.sleep(delay * (attempt + 1))
+    return None
+
+
+def generate_answer(query, retrieved_chunks):
+    context = "\n\n".join(
+        f"[Source: {c['source']} p.{c['page']}]\n{c['text']}"
+        for c in retrieved_chunks
+    )
+    response = safe_chat([
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {query}"},
+    ])
+    if response is None:
+        return "Sorry, the API is not responding. Please try again."
+    return response.choices[0].message.content
+
+
+def answer_question(query, index, chunks, k=TOP_K):
+    results = retrieve(query, index, chunks, k=k)
+
+
+    if not results or results[0]["score"] < MIN_SCORE:
+        return REFUSAL, []
+
+    answer = generate_answer(query, results)
+
+
+    if REFUSAL.lower().rstrip(".") in answer.lower(): #type:ignore
+        return answer, []
+    return answer, results

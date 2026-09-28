@@ -17,7 +17,7 @@ faiss.normalize_L2(vectors)
 index = faiss.IndexFlatIP(vectors.shape[1])
 index.add(vectors)
 
-faiss.write_index(index, "data/my_index_faiss")
+faiss.write_index(index, "data/my_index.faiss")
 with open("data/chunks.json", "w") as f :
     json.dump(chunks, f, ensure_ascii=False)
 
