@@ -15,11 +15,11 @@ if not runtime.exists():
     sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run", __file__], cwd=ROOT))
 
 import faiss
-from app.core import TOP_K
+from app.core import TOP_K, INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS
 from app.generate_answer import answer_question
 
-INDEX_FILE = ROOT / "data/my_index.faiss"
-CHUNKS_FILE = ROOT / "data/chunks.json"
+INDEX_FILE = ROOT / _INDEX
+CHUNKS_FILE = ROOT / _CHUNKS
 
 
 @st.cache_resource

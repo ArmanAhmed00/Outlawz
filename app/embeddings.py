@@ -2,16 +2,16 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from app.core import EMBED_MODEL, track_cost
+
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-EMBED_MODEL = "text-embedding-3-small"
-
-
 def get_embeddings(texts):
     response = client.embeddings.create(model=EMBED_MODEL, input=texts)
+    track_cost(response, is_embedding=True)
     return [item.embedding for item in response.data]
 
 

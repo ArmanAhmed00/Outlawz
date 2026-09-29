@@ -2,11 +2,13 @@
 # Run with: python app/evaluate.py
 # Based on "Running Your Eval Set" + Section 9 (LLM-as-judge) of the code reference.
 
-import json
+import sys, json
+sys.path.insert(0, ".")
 
-from core import safe_chat, REFUSAL
-from preparation import load_index
-from answering import retrieve, answer_question
+import faiss
+from app.core import REFUSAL, INDEX_FILE, CHUNKS_FILE
+from app.retrieval import retrieve
+from app.generate_answer import safe_chat, answer_question
 
 USE_JUDGE = False  # set True to also check faithfulness (costs a bit more)
 
@@ -36,7 +38,9 @@ with open("data/questions.json", encoding="utf-8") as f:
     questions = json.load(f)
 
 # Load index and chunks
-index, chunks = load_index()
+index = faiss.read_index(INDEX_FILE)
+with open(CHUNKS_FILE, encoding="utf-8") as f:
+    chunks = json.load(f)
 
 hits, total_with_chunks = 0, 0
 refusals_ok, total_out_of_scope = 0, 0
@@ -60,7 +64,7 @@ for q in questions:
         hits += hit
 
     # Out-of-scope check: did the system refuse?
-    refused = REFUSAL.lower().rstrip(".") in answer.lower()
+    refused = REFUSAL.lower().rstrip(".") in answer.lower()#type: ignore
     if q["category"] == "out-of-scope":
         total_out_of_scope += 1
         refusals_ok += refused

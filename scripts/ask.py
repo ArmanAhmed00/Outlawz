@@ -2,14 +2,16 @@ import sys, json
 sys.path.insert(0, ".")
 
 import faiss
-from app.retrieval import retrieve
-from app.generate_answer import generate_answer
+from app.core import INDEX_FILE, CHUNKS_FILE
+from app.generate_answer import answer_question
 
 
-index = faiss.read_index("data/my_index.faiss")
-with open("data/chunks.json") as f :
+index = faiss.read_index(INDEX_FILE)
+with open(CHUNKS_FILE, encoding="utf-8") as f :
     chunks = json.load(f)
 
 query = " ".join(sys.argv[1:]) or input("Question : ")
-results = retrieve(query, index, chunks, k=5)
-print(generate_answer(query, results))
+answer, sources = answer_question(query, index, chunks)
+print(answer)
+for s in sources:
+    print(f"  - {s['source']} p.{s['page']} (score {s['score']:.3f})")

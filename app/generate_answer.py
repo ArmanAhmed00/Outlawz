@@ -1,12 +1,8 @@
 import time
 
-from dotenv import load_dotenv
-
-from app.core import TOP_K, MIN_SCORE, REFUSAL
+from app.core import CHAT_MODEL, TOP_K, MIN_SCORE, REFUSAL, track_cost
 from app.embeddings import client
 from app.retrieval import retrieve
-
-load_dotenv()
 
 SYSTEM_PROMPT = (
     "You are a helpful assistant. Answer the question based ONLY "
@@ -19,16 +15,18 @@ SYSTEM_PROMPT = (
 )
 
 
-def safe_chat(messages, retries=3, delay=2):
+def safe_chat(messages, max_tokens=300, retries=3, delay=2):
     """Appelle l'API avec quelques essais. Renvoie None si tout échoue."""
     for attempt in range(retries):
         try:
-            return client.chat.completions.create(
-                model="gpt-4o-mini",
+            response = client.chat.completions.create(
+                model=CHAT_MODEL,
                 messages=messages,
                 temperature=0,
-                max_tokens=300,
+                max_tokens=max_tokens,
             )
+            track_cost(response)
+            return response
         except Exception as e:
             print(f"Erreur API (essai {attempt + 1}/{retries}) : {e}")
             time.sleep(delay * (attempt + 1))
