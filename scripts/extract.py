@@ -13,7 +13,8 @@ def clean(text: str) -> str:
 
 def extract_pdf(path):
     doc = fitz.open(path)
-    for i, page in enumerate(doc, start=1):
+    for i, page in enumerate(doc, start=1): #type: ignore
+
         yield i, clean(page.get_text())
 
 def extract_text_file(path):
