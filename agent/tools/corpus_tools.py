@@ -17,7 +17,7 @@ def make_search_corpus(index, chunks):
 def make_quote_exact(chunks):
     def quote_exact(source: str, page: int) -> str:
         """Renvoie le texte exact d'un chunk donné (source + page), pour vérifier une citation."""
-        matches = [c for c in chunks if c["source"] == source and c["page"] == page]
+        matches = [c for c in chunks if c["source"] == source and c["page"] == int(page)]
         if not matches:
             return f"No chunk found for source={source}, page={page}."
         return "\n---\n".join(m["text"] for m in matches)

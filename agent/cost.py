@@ -7,8 +7,9 @@ total_cost = 0.0
 
 def track_cost(response, is_embedding=False):
     global total_cost
-    model = response.model
-    prices = PRICES.get(model, {"input": 0.0, "output": 0.0})
+    model = response.model  # e.g. "gpt-4o-mini-2024-07-18", so match on the prefix
+    prices = next((p for name, p in PRICES.items() if model.startswith(name)),
+                  {"input": 0.0, "output": 0.0})
 
     if is_embedding:
         tokens = response.usage.total_tokens

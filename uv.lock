@@ -630,12 +630,6 @@ wheels = [
 ]
 
 [[package]]
-name = "jason"
-version = "0.1.7"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/99/54/ecb09866b6bd80ad8bdfc83de5735b51668961e5f7377de1b404bf6c4783/jason-0.1.7.tar.gz", hash = "sha256:ebb3a47bba158161488ee8ca80f927487b0b3261f80a235f4130bcf438eea454", size = 2412, upload-time = "2014-06-25T12:06:25.383Z" }
-
-[[package]]
 name = "jinja2"
 version = "3.1.6"
 source = { registry = "https://pypi.org/simple" }
@@ -1011,7 +1005,6 @@ source = { virtual = "." }
 dependencies = [
     { name = "faiss-cpu" },
     { name = "gradio" },
-    { name = "jason" },
     { name = "openai" },
     { name = "pandas" },
     { name = "pymupdf" },
@@ -1025,7 +1018,6 @@ dependencies = [
 requires-dist = [
     { name = "faiss-cpu", specifier = ">=1.15.1" },
     { name = "gradio", specifier = ">=6.28.0" },
-    { name = "jason", specifier = ">=0.1.7" },
     { name = "openai", specifier = ">=3.19.2" },
     { name = "pandas", specifier = ">=3.0.6" },
     { name = "pymupdf", specifier = ">=1.28.2" },

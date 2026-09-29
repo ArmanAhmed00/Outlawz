@@ -16,7 +16,8 @@ SYSTEM_PROMPT = (
 
 MAX_STEPS = 6
 
-def run_agent(user_message, tools, tool_function, verbose=True):
+def run_agent(user_message, tools, tool_function, verbose=True, trace=None):
+    """trace: optional list; each tool call is appended as {tool, arguments, result}."""
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_message}
@@ -39,6 +40,8 @@ def run_agent(user_message, tools, tool_function, verbose=True):
 
             if verbose:
                 print(f"[step {step}] tool: {name}({args}) -> {result[:120]}")
+            if trace is not None:
+                trace.append({"tool": name, "arguments": args, "result": result})
 
             messages.append({
                 "role": "tool",

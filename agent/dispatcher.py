@@ -16,7 +16,7 @@ def run_tool(tool_function, name, arguments_json):
     if name not in tool_function :
         return f"Unknown tool '{name}'."
     try:
-        args = json.loads(arguments_json)
+        args = json.loads(arguments_json or "{}")
         return str(tool_function[name](**args))
     except Exception as e:
         return f"Error running {name} : {e}"

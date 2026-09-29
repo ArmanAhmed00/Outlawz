@@ -15,8 +15,12 @@ if not runtime.exists():
     sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run", __file__], cwd=ROOT))
 
 import faiss
-from app.core import TOP_K, INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS
-from app.generate_answer import answer_question
+from app.core import INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS
+from agent.dispatcher import build_tool_functions
+from agent.loop import run_agent
+from agent.tools.schemas import calculator_schema, search_corpus_schema, quote_exact_schema
+
+TOOLS = [calculator_schema, search_corpus_schema, quote_exact_schema]
 
 INDEX_FILE = ROOT / _INDEX
 CHUNKS_FILE = ROOT / _CHUNKS
@@ -32,31 +36,32 @@ def load_index():
 
 st.set_page_config(page_title="Outlawz", page_icon="⚖️")
 st.title("⚖️ Outlawz")
-st.caption("Ask a question about the documents in the corpus.")
+st.caption("Ask a question about the documents in the corpus, or have it do the math.")
 
 if not (INDEX_FILE.exists() and CHUNKS_FILE.exists()):
     st.error("Index not found. Run `python scripts/build_index.py` first.")
     st.stop()
 
 index, chunks = load_index()
+tool_functions = build_tool_functions(index, chunks)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-def show_sources(sources):
-    if not sources:
+def show_trace(trace):
+    if not trace:
         return
-    with st.expander(f"Sources ({len(sources)})"):
-        for s in sources:
-            st.markdown(f"**{s['source']}**, p.{s['page']} — score {s['score']:.3f}")
-            st.text(s["text"][:500])
+    with st.expander(f"Agent steps ({len(trace)})"):
+        for t in trace:
+            st.markdown(f"**{t['tool']}** `{t['arguments']}`")
+            st.text(t["result"][:500])
 
 
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
-        show_sources(msg.get("sources"))
+        show_trace(msg.get("trace"))
 
 if question := st.chat_input("Your question"):
     st.session_state.messages.append({"role": "user", "content": question})
@@ -64,8 +69,9 @@ if question := st.chat_input("Your question"):
         st.markdown(question)
 
     with st.chat_message("assistant"):
-        with st.spinner("Searching..."):
-            answer, sources = answer_question(question, index, chunks, k=TOP_K)
+        trace = []
+        with st.spinner("Thinking..."):
+            answer = run_agent(question, TOOLS, tool_functions, verbose=False, trace=trace)
         st.markdown(answer)
-        show_sources(sources)
-    st.session_state.messages.append({"role": "assistant", "content": answer, "sources": sources})
+        show_trace(trace)
+    st.session_state.messages.append({"role": "assistant", "content": answer, "trace": trace})
