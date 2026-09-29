@@ -1,5 +1,5 @@
 # Run with: streamlit run app/app.py  (from the project root)
-import sys, json
+import os, sys, json
 from pathlib import Path
 
 # Put the project root first so `app` resolves to the package, not this file
@@ -15,16 +15,13 @@ if not runtime.exists():
     sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run", __file__], cwd=ROOT))
 
 import faiss
-from app.core import TOP_K, INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS
+from app.core import TOP_K, INDEX_FILE, CHUNKS_FILE
 from app.generate_answer import answer_question
-
-INDEX_FILE = ROOT / _INDEX
-CHUNKS_FILE = ROOT / _CHUNKS
 
 
 @st.cache_resource
 def load_index():
-    index = faiss.read_index(str(INDEX_FILE))
+    index = faiss.read_index(INDEX_FILE)
     with open(CHUNKS_FILE, encoding="utf-8") as f:
         chunks = json.load(f)
     return index, chunks
@@ -34,7 +31,7 @@ st.set_page_config(page_title="Outlawz", page_icon="⚖️")
 st.title("⚖️ Outlawz")
 st.caption("Ask a question about the documents in the corpus.")
 
-if not (INDEX_FILE.exists() and CHUNKS_FILE.exists()):
+if not (os.path.exists(INDEX_FILE) and os.path.exists(CHUNKS_FILE)):
     st.error("Index not found. Run `python scripts/build_index.py` first.")
     st.stop()
 

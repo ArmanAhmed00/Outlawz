@@ -1,5 +1,6 @@
 import json
 import os
+from pathlib import Path
 
 
 CHAT_MODEL = "gpt-4o-mini"
@@ -14,10 +15,12 @@ MIN_SCORE = 0.30  # if the best chunk is less similar than this -> out of scope 
 
 REFUSAL = "I don't have enough information to answer this."
 
-CORPUS_FILE = "data/corpus.json"
-CHUNKS_FILE = "data/chunks.json"
-INDEX_FILE = "data/my_index.faiss"
-COST_FILE = "data/cost.json"
+# Absolute paths, so scripts work no matter which folder they're run from
+ROOT = Path(__file__).resolve().parent.parent
+CORPUS_FILE = str(ROOT / "data/corpus.json")
+CHUNKS_FILE = str(ROOT / "data/chunks.json")
+INDEX_FILE = str(ROOT / "data/my_index.faiss")
+COST_FILE = str(ROOT / "data/cost.json")
 
 
 # ---------------- Section 8: Cost tracker ----------------
