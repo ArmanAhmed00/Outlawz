@@ -50,13 +50,13 @@ def generate_answer(query, retrieved_chunks):
 def answer_question(query, index, chunks, k=TOP_K):
     results = retrieve(query, index, chunks, k=k)
 
-
-    if not results or results[0]["score"] < MIN_SCORE:
-        return REFUSAL, []
+    if results is None:
+        results = retrieve(query, index, chunks, k=k)
 
     answer = generate_answer(query, results)
 
-
-    if REFUSAL.lower().rstrip(".") in answer.lower(): #type:ignore
+    if REFUSAL.lower().rstrip(".") in answer.lower():  # type: ignore
         return answer, []
     return answer, results
+
+    

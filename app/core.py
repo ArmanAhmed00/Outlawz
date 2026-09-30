@@ -12,6 +12,11 @@ OVERLAP = 100
 TOP_K = 5
 MIN_SCORE = 0.30  # if the best chunk is less similar than this -> out of scope (tune with evaluate.py)
 
+# Reranking: fetch FETCH_K candidates with FAISS, then a cross-encoder keeps the best TOP_K
+USE_RERANK = True
+FETCH_K = 20
+RERANK_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+
 REFUSAL = "I don't have enough information to answer this."
 
 CORPUS_FILE = "data/corpus.json"
@@ -43,3 +48,5 @@ def get_total_cost():
         return 0.0
     with open(COST_FILE) as f:
         return json.load(f)["total"]
+USE_BM25 = True
+RRF_K = 60                       # standard RRF constant

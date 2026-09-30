@@ -1,21 +1,20 @@
-import numpy as np
-import faiss 
-from app.core import TOP_K
-from app.embeddings import get_embeddings
-
+from app.core import TOP_K, FETCH_K, USE_RERANK, USE_BM25 # type: ignore
+from app.search.vector_search import embed_query, vector_ids, to_result
+from app.search.bm25 import bm25_ids
+from app.search.fusion import rrf
+from app.search.rerank import rerank
 
 
 def retrieve(query, index, chunks, k=TOP_K):
-    query_vector = np.array(get_embeddings([query])).astype("float32")
-    faiss.normalize_L2(query_vector)
-    scores, indeces = index.search(query_vector, k)
+    """Vector search (+ BM25 with RRF) (+ reranking), depending on the flags."""
+    qv = embed_query(query)
+    n = FETCH_K if (USE_RERANK or USE_BM25) else k
 
-    results = []
-    for score, idx in zip(scores[0], indeces[0]):
-        if idx == -1:
-            continue
-        chunk = dict(chunks[idx])
-        chunk["score"] = float(score)
-        results.append(chunk)
+    ids = vector_ids(qv, index, n)
+    if USE_BM25:
+        ids = rrf([ids, bm25_ids(query, chunks, n)])[:n]
 
-    return results
+    candidates = [to_result(i, chunks, index, qv) for i in ids]
+    if USE_RERANK:
+        return rerank(query, candidates, k)
+    return candidates[:k]

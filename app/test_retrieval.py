@@ -20,4 +20,4 @@ for q in questions:
     results = retrieve(q, index, chunks, k=3)
     print(f"\n=== {q}")
     for r in results:
-        print(f"  {r['score']:.3f} | {r['source']} p.{r['page']} | {r['text'][:80]!r}")
+        print(f"  faiss={r['score']:.3f} rerank={r.get('rerank_score', 0):+.2f} | "f"{r['source']} p.{r['page']} | {r['text'][:70]!r}")
