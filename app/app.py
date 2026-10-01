@@ -19,6 +19,8 @@ import faiss
 from app.core import INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS, get_total_cost
 from agent.dispatcher import build_tool_functions
 from agent.loop import run_agent
+from app.injection import add_injection_chunk
+from app.suggest import suggest_followups
 from agent.tools.schemas import calculator_schema, search_corpus_schema, quote_exact_schema
 
 TOOLS = [calculator_schema, search_corpus_schema, quote_exact_schema]
@@ -53,7 +55,7 @@ def load_index():
     index = faiss.read_index(str(INDEX_FILE))
     with open(CHUNKS_FILE, encoding="utf-8") as f:
         chunks = json.load(f)
-    return index, chunks
+    return add_injection_chunk(index, chunks)  # no-op unless INJECTION_TEST
 
 
 def short_name(source):
@@ -65,6 +67,12 @@ def clean_answer(text):
     text = re.sub(r"\s*【[^】]*】", "", text)
     text = re.sub(r"\\\((.+?)\\\)", r"$\1$", text)
     return re.sub(r"\\\[(.+?)\\\]", r"$$\1$$", text, flags=re.S)
+
+
+def plain_answer(text):
+    """Answer text for the clipboard: no 【3†source】 tags and no math markers."""
+    text = re.sub(r"\s*【[^】]*】", "", text)
+    return re.sub(r"\\[()\[\]]\s?|\s?\\[)\]]", "", text).strip()
 
 
 def cited_sources(trace):
@@ -96,16 +104,50 @@ def show_steps(trace):
             st.text(t["result"][:1500])
 
 
+def copy_button(text):
+    """A small button that copies text to the clipboard (Streamlit has no built-in one)."""
+    # Escape < > & so model output can never close the <script> tag
+    payload = json.dumps(text).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+    st.iframe(f"""
+    <button id="copy">&#x2398;&nbsp; Copy</button>
+    <style>
+      body {{ margin: 0; }}
+      #copy {{ font: 14px "Source Sans Pro", sans-serif; color: #1C1C1C; background: #FAF8F4;
+               border: 1px solid rgba(49, 51, 63, 0.2); border-radius: 8px; padding: 6px 12px;
+               cursor: pointer; height: 38px; }}
+      #copy:hover {{ border-color: #1F3A5F; color: #1F3A5F; }}
+    </style>
+    <script>
+      const text = {payload};
+      const btn = document.getElementById("copy");
+      btn.onclick = async () => {{
+        try {{ await navigator.clipboard.writeText(text); }}
+        catch (e) {{  // older browsers / blocked clipboard API
+          const ta = document.createElement("textarea");
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          document.execCommand("copy"); ta.remove();
+        }}
+        btn.innerHTML = "&#x2713;&nbsp; Copied";
+        setTimeout(() => btn.innerHTML = "&#x2398;&nbsp; Copy", 1500);
+      }};
+    </script>
+    """, height=40)
+
+
 def show_answer(content, trace):
-    st.markdown(clean_answer(content))
+    answer = clean_answer(content)
+    st.markdown(answer)
     sources = cited_sources(trace)
+    copy_col, sources_col = st.columns([1, 5], vertical_alignment="center")
+    with copy_col:
+        copy_button(plain_answer(content))
     if sources:
-        with st.popover(f":material/menu_book: Pages consulted ({len(sources)})"):
+        with sources_col.popover(f":material/menu_book: Pages consulted ({len(sources)})"):
             for source, page in sources:
                 name, full = DOCUMENT_TITLES.get(source, (source, ""))
                 st.markdown(f"**{name}**, page {page}  \n:gray[{full}]")
     if trace:
-        with st.expander(f":material/account_tree: How I got this ({len(trace)} steps)"):
+        with st.expander(f":material/account_tree: How I got this ({len(trace)} step{'s' if len(trace) != 1 else ''})"):
             show_steps(trace)
 
 
@@ -177,6 +219,12 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"], avatar=AVATARS[msg["role"]]):
         if msg["role"] == "assistant":
             show_answer(msg["content"], msg.get("trace", []))
+            if msg is st.session_state.messages[-1] and msg.get("suggestions"):
+                st.caption("Follow-up questions")
+                for j, sug in enumerate(msg["suggestions"]):
+                    if st.button(sug, key=f"fu{len(st.session_state.messages)}_{j}",
+                                 icon=":material/subdirectory_arrow_right:"):
+                        clicked = sug
         else:
             st.markdown(msg["content"])
 
@@ -198,9 +246,11 @@ if question:
                     status.markdown(f"{icon} {label} · `{step['arguments']}`")
 
             trace = LiveTrace()
-            answer = run_agent(question, TOOLS, tool_functions, verbose=False, trace=trace)
+            answer = run_agent(question, TOOLS, tool_functions, verbose=False, trace=trace,
+                               history=st.session_state.messages[:-1])
             trace = list(trace)
             status.update(label=f"Done · {len(trace)} step{'s' if len(trace) != 1 else ''}", expanded=False,
                           state="complete")
-        st.session_state.messages.append({"role": "assistant", "content": answer, "trace": trace})
+        st.session_state.messages.append({"role": "assistant", "content": answer, "trace": trace,
+                                          "suggestions": suggest_followups(question, answer)})
     st.rerun()  # redraw the full history (sources, steps) and hide the examples

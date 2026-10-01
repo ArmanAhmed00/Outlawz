@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--full", action="store_true", help="also generate answers")
 parser.add_argument("--no-rerank", action="store_true", help="turn reranking off")
 parser.add_argument("--no-bm25", action="store_true", help="turn BM25 off")
+parser.add_argument("--no-rewrite", action="store_true", help="turn query rewriting off")
 parser.add_argument("--out", default="data/eval_results.json")
 args = parser.parse_args()
 
@@ -19,11 +20,13 @@ args = parser.parse_args()
 import app.core as core
 core.USE_RERANK = not args.no_rerank
 core.USE_BM25 = not args.no_bm25
+core.USE_REWRITE = not args.no_rewrite
 
 import faiss
 from app.retrieval import retrieve
 from app.generate_answer import answer_question
 from app.metrics import expected_pages, first_hit_rank, summarize
+from app.rewrite import rewrite_query
 
 index = faiss.read_index(str(ROOT / core.INDEX_FILE))
 with open(ROOT / core.CHUNKS_FILE, encoding="utf-8") as f:
@@ -32,14 +35,16 @@ with open(ROOT / "data/questions.json", encoding="utf-8") as f:
     questions = json.load(f)
 
 print(f"Mode: {'full' if args.full else 'retrieval only'} | "
-      f"rerank={core.USE_RERANK} bm25={core.USE_BM25}")
+      f"rerank={core.USE_RERANK} bm25={core.USE_BM25} rewrite={core.USE_REWRITE}")
 retrieve("warm up", index, chunks)  # load reranker + BM25 before timing
 
 # ---------------- Run every question ----------------
 rows = []
 for i, q in enumerate(questions, 1):
     t0 = time.perf_counter()
-    results = retrieve(q["question"], index, chunks)
+    history = [{"role": "user", "content": h} for h in q.get("history", [])]
+    search_q = rewrite_query(q["question"], history) if core.USE_REWRITE else q["question"]
+    results = retrieve(search_q, index, chunks)
     expected = expected_pages(q)
 
     row = {
@@ -47,6 +52,8 @@ for i, q in enumerate(questions, 1):
         "category": q["category"],
         "difficulty": q.get("difficulty"),
         "priority": q.get("priority", False),
+        "is_followup": bool(history),
+        "rewritten_query": search_q if history else None,
         "has_expected": bool(expected),
         "rank": first_hit_rank(results, expected) if expected else None,
         "top_rerank": results[0].get("rerank_score") if results else None,
@@ -59,7 +66,7 @@ for i, q in enumerate(questions, 1):
     }
 
     if args.full:
-        answer, _ = answer_question(q["question"], index, chunks, results=results)
+        answer, _ = answer_question(q["question"], index, chunks, results=results, history=history)
         row["answer"] = answer
         row["expected_answer"] = q.get("expected_answer")
         row["refused"] = core.REFUSAL.lower().rstrip(".") in answer.lower()
@@ -92,6 +99,14 @@ print(f"Recall@1 {overall['recall@1']:.0%} | Recall@3 {overall['recall@3']:.0%} 
 table("By category", "category")
 table("By difficulty", "difficulty")
 
+followups = [r for r in rows if r["is_followup"]]
+if followups and summarize(followups):
+    s_fu = summarize(followups)
+    print(f"\n--- Follow-up questions ---")
+    print(f"R@1 {s_fu['recall@1']:.0%} | R@5 {s_fu['recall@5']:.0%} | MRR {s_fu['mrr']:.2f} (on {s_fu['n']})")
+    for r in followups:
+        print(f"  rank={r['rank']} | {r['question'][:45]!r} -> searched: {r['rewritten_query']!r}")
+
 if args.full:
     no_exp = [r for r in rows if not r["has_expected"]]
     wrong_ref = [r for r in rows if r["has_expected"] and r["refused"]]
@@ -110,6 +125,6 @@ for r in rows:
 
 out = ROOT / args.out
 with open(out, "w", encoding="utf-8") as f:
-    json.dump({"config": {"full": args.full, "rerank": core.USE_RERANK, "bm25": core.USE_BM25},
+    json.dump({"config": {"full": args.full, "rerank": core.USE_RERANK, "bm25": core.USE_BM25, "rewrite": core.USE_REWRITE},
                "summary": overall, "results": rows}, f, ensure_ascii=False, indent=2)
 print(f"\nSaved {args.out}")
