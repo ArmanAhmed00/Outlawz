@@ -1,5 +1,6 @@
 from agent.model import call_model
 from agent.dispatcher import run_tool
+from app.memory import recent_history
 
 SYSTEM_PROMPT = (
     "You are a helpful assistant that can use tools to answer questions. "
@@ -16,10 +17,11 @@ SYSTEM_PROMPT = (
 
 MAX_STEPS = 6
 
-def run_agent(user_message, tools, tool_function, verbose=True, trace=None):
+def run_agent(user_message, tools, tool_function, verbose=True, trace=None, history=None):
     """trace: optional list; each tool call is appended as {tool, arguments, result}."""
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
+        *recent_history(history),
         {"role": "user", "content": user_message}
     ]
 
