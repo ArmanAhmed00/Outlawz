@@ -1,0 +1,803 @@
+[
+  {
+    "question": "What regulation lays down rules relating to the protection of natural persons with regard to the processing of personal data and repeals Directive 95/46/EC?",
+    "expected_answer": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 1,
+    "category": "factual",
+    "difficulty": "easy",
+    "priority": true,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 1
+      }
+    ]
+  },
+  {
+    "question": "What is the definition of 'personal data' under Article 4(1)?",
+    "expected_answer": "'personal data' means any information relating to an identified or identifiable natural person ('data subject'); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 3,
+    "category": "factual",
+    "difficulty": "easy",
+    "priority": true,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 3
+      }
+    ]
+  },
+  {
+    "question": "Who is defined as a 'controller' in Article 4(7)?",
+    "expected_answer": "The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 4,
+    "category": "factual",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 4
+      }
+    ]
+  },
+  {
+    "question": "What is the general age threshold for a child's valid consent in relation to information society services under Article 8(1)?",
+    "expected_answer": "At least 16 years old (though Member States may provide for a lower age, provided it is not below 13 years).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 9,
+    "category": "factual",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "question": "What timeframe does the controller have under Article 12(3) to provide information on action taken on a request to the data subject?",
+    "expected_answer": "Without undue delay and in any event within one month of receipt of the request (extendable by two further months where necessary).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 12,
+    "category": "factual",
+    "difficulty": "easy",
+    "priority": true,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 12
+      }
+    ]
+  },
+  {
+    "question": "According to Article 2(2), which types of processing activities fall outside the material scope of this Regulation?",
+    "expected_answer": "Processing (a) outside the scope of Union law; (b) by Member States under Chapter 2 Title V TEU; (c) by a natural person in purely personal or household activity; (d) by competent authorities for prevention, investigation, detection or prosecution of criminal offences/penalties.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 2,
+    "category": "factual",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 2
+      }
+    ]
+  },
+  {
+    "question": "What directive is referred to in Article 4(25) to define an 'information society service'?",
+    "expected_answer": "Directive (EU) 2015/1535 of the European Parliament and of the Council.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 6,
+    "category": "factual",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 6
+      }
+    ]
+  },
+  {
+    "question": "Under Article 10, when can personal data relating to criminal convictions and offences be processed?",
+    "expected_answer": "Only under the control of official authority or when authorised by Union or Member State law providing for appropriate safeguards.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 11,
+    "category": "factual",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "question": "What is the requirement under Article 19 regarding recipient notification when data is rectified or erased?",
+    "expected_answer": "The controller shall communicate any rectification, erasure, or restriction of processing to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 19,
+    "category": "factual",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 19
+      }
+    ]
+  },
+  {
+    "question": "According to Article 21(2), what right does a data subject have when personal data are processed for direct marketing purposes?",
+    "expected_answer": "The data subject shall have the right to object at any time to processing of personal data concerning him or her for such marketing, including profiling related to such direct marketing.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 20,
+    "category": "factual",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 20
+      }
+    ]
+  },
+  {
+    "question": "What is 'pseudonymisation' according to Article 4(5)?",
+    "expected_answer": "The processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and subject to technical and organizational measures.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 4,
+    "category": "factual",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 4
+      }
+    ]
+  },
+  {
+    "question": "How are the territorial scope conditions detailed across establishment in the EU versus non-EU controllers targeting data subjects in the EU?",
+    "expected_answer": "Article 3(1) applies to processing in the context of an establishment in the Union regardless of where processing takes place. Article 3(2) applies to non-EU controllers offering goods/services to EU data subjects or monitoring their behavior in the EU.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 3,
+    "category": "cross-reference",
+    "sub_type": "adjacent_chunks",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 3
+      }
+    ]
+  },
+  {
+    "question": "How do the lawful grounds for processing standard personal data differ from the conditions required to process special categories of personal data?",
+    "expected_answer": "Standard processing requires meeting at least one ground under Article 6(1) (e.g. consent, contract, legal obligation). Special category processing is prohibited under Article 9(1) unless an exception in Article 9(2) applies (e.g. explicit consent, employment law obligations, vital interests).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      7,
+      8,
+      10,
+      11
+    ],
+    "category": "cross-reference",
+    "sub_type": "same_document",
+    "difficulty": "hard",
+    "priority": true,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 7
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 8
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 10
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "question": "What differences exist between information provided when personal data are collected directly from the data subject versus obtained from a third party?",
+    "expected_answer": "Under Article 13 (collected from data subject), information includes statutory/contractual necessity and consequences of failing to provide data. Under Article 14 (not obtained from data subject), information includes categories of data concerned and source/public accessibility of data.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "category": "cross-reference",
+    "sub_type": "same_document",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 13
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 14
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 15
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 16
+      }
+    ]
+  },
+  {
+    "question": "How is scientific research processing treated across core principles, lawful purposes, and data subject rights to object?",
+    "expected_answer": "Article 5(1)(b) allows further processing for scientific research as compatible with initial purposes; Article 9(2)(j) exempts special categories for scientific research; Article 21(6) allows data subjects to object to research processing unless necessary for public interest tasks.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      7,
+      11,
+      20
+    ],
+    "category": "cross-reference",
+    "sub_type": "same_document",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 7
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 11
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 20
+      }
+    ]
+  },
+  {
+    "question": "Where in the document are the conditions and rights concerning automated individual decision-making, including profiling, defined?",
+    "expected_answer": "Definition in Article 4(4) (p. 4), data subject notification obligations in Article 13(2)(f) / Article 14(2)(g) (p. 14, 15), right of access in Article 15(1)(h) (p. 17), and general prohibition/exceptions in Article 22 (p. 21).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      4,
+      14,
+      15,
+      17,
+      21
+    ],
+    "category": "cross-reference",
+    "sub_type": "repeated",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 4
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 14
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 15
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 17
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 21
+      }
+    ]
+  },
+  {
+    "question": "What brief mention is made of Member State limitations on specific data types compared to the detailed rules provided in Article 9?",
+    "expected_answer": "Article 9(1)-(2) provides detailed prohibitions and specific exceptions for special categories, while Article 9(4) gives a summary clause allowing Member States to introduce further conditions or limitations regarding genetic data, biometric data, or health data.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      10,
+      11
+    ],
+    "category": "cross-reference",
+    "sub_type": "summary_vs_detail",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 10
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "question": "How do the rules governing data portability interact with the right to erasure?",
+    "expected_answer": "Article 20(3) explicitly establishes that the exercise of the right to data portability under Article 20(1) shall be without prejudice to Article 17 (right to erasure).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      19,
+      20
+    ],
+    "category": "cross-reference",
+    "sub_type": "adjacent_chunks",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 19
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 20
+      }
+    ]
+  },
+  {
+    "question": "How are restrictions by legislative measures specified regarding scope, subject matter, and controller safeguards?",
+    "expected_answer": "Article 23(1) specifies the permissible scope (national security, defence, public security, etc.), while Article 23(2) lists mandatory detailed provisions including processing purposes, data categories, restriction scope, and safeguards against abuse.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      21,
+      22
+    ],
+    "category": "cross-reference",
+    "sub_type": "adjacent_chunks",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 21
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 22
+      }
+    ]
+  },
+  {
+    "question": "What rules govern data anonymization and user privacy protection in this text?",
+    "expected_answer": "The text explicitly defines 'pseudonymisation' (Article 4(5)), but does not define or specify full anonymization rules within these pages.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 4,
+    "category": "stress-test",
+    "sub_type": "paraphrased",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 4
+      }
+    ]
+  },
+  {
+    "question": "What specific provisions are outlined in Article 2(2)(c)?",
+    "expected_answer": "Article 2(2)(c) states that the Regulation does not apply to processing of personal data 'by a natural person in the course of a purely personal or household activity'.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 2,
+    "category": "stress-test",
+    "sub_type": "exact_term",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 2
+      }
+    ]
+  },
+  {
+    "question": "Is a controller allowed to charge a fee for responding to a data access request?",
+    "expected_answer": "Generally no, information shall be provided free of charge under Article 12(5). However, if requests are manifestly unfounded or excessive (especially repetitive), the controller may charge a reasonable fee or refuse to act.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 13,
+    "category": "stress-test",
+    "sub_type": "yes_no",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 13
+      }
+    ]
+  },
+  {
+    "question": "When was Regulation (EU) 2016/679 adopted and when was its Corrigendum published in the Official Journal?",
+    "expected_answer": "Adopted on 27 April 2016; Corrigendum published on 23 May 2018 (OJ L 127).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 1,
+    "category": "stress-test",
+    "sub_type": "temporal",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 1
+      }
+    ]
+  },
+  {
+    "question": "Under Article 9(1), what categories of data are NOT permitted to be processed as standard data?",
+    "expected_answer": "Personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, genetic data, biometric data for unique identification, data concerning health, or data concerning a natural person's sex life or sexual orientation.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 10,
+    "category": "stress-test",
+    "sub_type": "negation",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "question": "If a non-EU business tracks user habits of people living in France on its app, does GDPR apply to them and do they need parental consent for 14-year-olds?",
+    "expected_answer": "Yes, GDPR applies under Article 3(2)(b) (monitoring behavior in Union). For a 14-year-old, processing is lawful under Article 8(1) only with parental consent/authorization, unless Member State law permits lower age (down to 13).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      3,
+      9
+    ],
+    "category": "stress-test",
+    "sub_type": "multi_hop",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 3
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "question": "What are the six principles relating to processing of personal data listed under Article 5(1)?",
+    "expected_answer": "(a) Lawfulness, fairness and transparency; (b) Purpose limitation; (c) Data minimisation; (d) Accuracy; (e) Storage limitation; (f) Integrity and confidentiality.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      6,
+      7
+    ],
+    "category": "stress-test",
+    "sub_type": "table_list",
+    "difficulty": "medium",
+    "priority": true,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 6
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 7
+      }
+    ]
+  },
+  {
+    "question": "What condition applies regarding the burden of proof when a controller claims a data subject's request is manifestly unfounded?",
+    "expected_answer": "Under Article 12(5), the controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 13,
+    "category": "stress-test",
+    "sub_type": "edge_of_chunk",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 13
+      }
+    ]
+  },
+  {
+    "question": "Can I take back my consent whenever I want, and does that make everything they did before illegal?",
+    "expected_answer": "Under Article 7(3), you have the right to withdraw consent at any time. However, the withdrawal shall not affect the lawfulness of processing based on consent before its withdrawal.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 9,
+    "category": "stress-test",
+    "sub_type": "language_variation",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "question": "What were the administrative fine limits for data breaches under the 1995 Data Protection Directive?",
+    "expected_answer": "The provided text contains Directive 95/46/EC repeal references but does not specify fine limits under the 1995 Directive.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 1,
+    "category": "stress-test",
+    "sub_type": "on_topic_unanswerable",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 1
+      }
+    ]
+  },
+  {
+    "question": "What is 'biometric data', what is 'genetic data', and what Article defines them?",
+    "expected_answer": "Genetic data: personal data relating to inherited or acquired genetic characteristics (Article 4(13)). Biometric data: personal data from specific technical processing relating to physical/physiological/behavioural characteristics (Article 4(14)). Both defined in Article 4 (p. 5).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 5,
+    "category": "stress-test",
+    "sub_type": "multi_part",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "question": "Under what specific conditions can personal data be processed for compatibility with a secondary purpose?",
+    "expected_answer": "Under Article 6(4), taking into account links between purposes, context, nature of data (Article 9/10), possible consequences, and existence of appropriate safeguards (encryption/pseudonymisation).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": [
+      8,
+      9
+    ],
+    "category": "stress-test",
+    "sub_type": "table_list",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 8
+      },
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "question": "What is the maximum penalty fine for failing to comply with an order by a Supervisory Authority?",
+    "expected_answer": "The provided text excerpt (pages 1-23) covers Articles 1 to 24 and does not contain the penalty fine amounts.",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 23,
+    "category": "stress-test",
+    "sub_type": "on_topic_unanswerable",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 23
+      }
+    ]
+  },
+  {
+    "question": "What is the weather in Paris today?",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "out-of-scope",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "Who won the 2024 FIFA Men's Ballon d'Or?",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "out-of-scope",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "How do I configure a PostgreSQL database connection in Python using SQLAlchemy?",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "out-of-scope",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "What is the stock price of Apple Inc. today?",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "out-of-scope",
+    "difficulty": "easy",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "Tell me about the requirements.",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "ambiguous",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "What are the rules regarding consent?",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "ambiguous",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "How does the law deal with exceptions?",
+    "expected_answer": null,
+    "source": null,
+    "page": null,
+    "category": "ambiguous",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "How much was the GDPR fine imposed on Meta by the Irish Data Protection Commission in 2023?",
+    "expected_answer": "Refusal: not covered by the corpus",
+    "source": null,
+    "page": null,
+    "category": "stress-test",
+    "sub_type": "on_topic_unanswerable",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "What does the California Consumer Privacy Act say about the right to opt out of the sale of personal information?",
+    "expected_answer": "Refusal: not covered by the corpus",
+    "source": null,
+    "page": null,
+    "category": "stress-test",
+    "sub_type": "on_topic_unanswerable",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "What fines has the French CNIL imposed for cookie consent violations?",
+    "expected_answer": "Refusal: not covered by the corpus",
+    "source": null,
+    "page": null,
+    "category": "stress-test",
+    "sub_type": "on_topic_unanswerable",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "How many high-risk AI systems have been registered in the EU database so far?",
+    "expected_answer": "Refusal: not covered by the corpus",
+    "source": null,
+    "page": null,
+    "category": "stress-test",
+    "sub_type": "on_topic_unanswerable",
+    "difficulty": "hard",
+    "priority": false,
+    "expected_chunks": null
+  },
+  {
+    "question": "And how does the same article define 'processing'?",
+    "history": [
+      "What is the definition of 'personal data' under Article 4(1)?"
+    ],
+    "expected_answer": "Any operation or set of operations performed on personal data, whether or not by automated means, such as collection, recording, organisation, storage, use, disclosure or erasure (Article 4(2)).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 3,
+    "category": "factual",
+    "sub_type": "follow_up",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 3
+      }
+    ]
+  },
+  {
+    "question": "And how long must they keep the automatically generated logs?",
+    "history": [
+      "What are the obligations of providers of high-risk AI systems?"
+    ],
+    "expected_answer": "For a period appropriate to the intended purpose, of at least six months, unless Union or national law provides otherwise (Article 19(1)).",
+    "source": "OJ_L_202401689_EN_TXT.pdf",
+    "page": 64,
+    "category": "factual",
+    "sub_type": "follow_up",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "OJ_L_202401689_EN_TXT.pdf",
+        "page": 64
+      }
+    ]
+  },
+  {
+    "question": "Can Member States lower it, and down to what age?",
+    "history": [
+      "What is the general age threshold for a child's valid consent in relation to information society services under Article 8(1)?"
+    ],
+    "expected_answer": "Yes, Member States may provide by law for a lower age, provided it is not below 13 years (Article 8(1)).",
+    "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+    "page": 9,
+    "category": "factual",
+    "sub_type": "follow_up",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of the first one?",
+    "history": [
+      "What are the four functions of the NIST AI RMF Core?"
+    ],
+    "expected_answer": "GOVERN cultivates and implements a culture of risk management within organizations; it is cross-cutting and informs the other functions.",
+    "source": "NIST.AI.100-1.pdf",
+    "page": 26,
+    "category": "factual",
+    "sub_type": "follow_up",
+    "difficulty": "medium",
+    "priority": false,
+    "expected_chunks": [
+      {
+        "source": "NIST.AI.100-1.pdf",
+        "page": 26
+      }
+    ]
+  }
+]

@@ -8,6 +8,9 @@ from app.generation.confidence import is_confident
 from app.core import USE_REWRITE
 from app.generation.memory import recent_history
 from app.generation.rewrite import rewrite_query
+from app.generation.clarify import check_clarity
+from app.generation.query_planner import plan_queries
+from app.search.multi_query import retrieve_multi
 
 SYSTEM_PROMPT = (
     "You are a helpful assistant. Answer the question based ONLY "
@@ -73,10 +76,18 @@ def answer_question(query, index, chunks, k=TOP_K, results=None, history=None):
         search_query = rewrite_query(query, history) if USE_REWRITE else query
         if search_query != query:
             print(f"[rewrite] {query!r} -> {search_query!r}")
-        results = retrieve(search_query, index, chunks, k=k)
+        queries = plan_queries(search_query)  # sub-questions / rephrasings (if enabled)
+        if len(queries) > 1:
+            print(f"[queries] {queries}")
+        results = retrieve_multi(queries, index, chunks, k=k)
 
     if not is_confident(results):          # best chunk too weak -> out of scope
         return REFUSAL, []
+
+    if core.USE_CLARIFY:                    # on topic but vague -> ask back instead of guessing
+        clarification = check_clarity(query, history)
+        if clarification:
+            return clarification, []
 
     answer = generate_answer(query, results, history)
 

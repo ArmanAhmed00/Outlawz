@@ -7,13 +7,19 @@ from collections import defaultdict
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+from app.core import RESULTS_DIR
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--full", action="store_true", help="also generate answers")
 parser.add_argument("--no-rerank", action="store_true", help="turn reranking off")
 parser.add_argument("--no-bm25", action="store_true", help="turn BM25 off")
 parser.add_argument("--no-rewrite", action="store_true", help="turn query rewriting off")
-parser.add_argument("--out", default="data/eval_results.json")
+parser.add_argument("--decompose", action="store_true", help="split multi-part questions")
+parser.add_argument("--expand", action="store_true", help="also search with 2 rephrasings")
+parser.add_argument("--no-clarify", action="store_true", help="never ask to clarify (full mode)")
+parser.add_argument("--chunking", choices=["fixed", "article"], default=None,
+                    help="which index to use (default: CHUNKING in app/core.py)")
+parser.add_argument("--out", default=f"{RESULTS_DIR}/eval_results.json")
 args = parser.parse_args()
 
 # set the flags BEFORE retrieval.py is imported (it reads them at import time)
@@ -21,21 +27,33 @@ import app.core as core
 core.USE_RERANK = not args.no_rerank
 core.USE_BM25 = not args.no_bm25
 core.USE_REWRITE = not args.no_rewrite
+core.USE_DECOMPOSE = args.decompose
+core.USE_EXPANSION = args.expand
+core.USE_CLARIFY = not args.no_clarify
+if args.chunking == "article":
+    core.CHUNKS_FILE, core.INDEX_FILE = core.ARTICLE_CHUNKS_FILE, core.ARTICLE_INDEX_FILE
+elif args.chunking == "fixed":
+    core.CHUNKS_FILE, core.INDEX_FILE = "data/chunks.json", "data/my_index.faiss"
 
 import faiss
 from app.search.retrieval import retrieve
 from app.generation.generate_answer import answer_question
 from app.eval.metrics import expected_pages, first_hit_rank, summarize
 from app.generation.rewrite import rewrite_query
+from app.generation.query_planner import plan_queries
+from app.search.multi_query import retrieve_multi
+from app.generation.clarify import CLARIFY_PREFIX
 
 index = faiss.read_index(str(ROOT / core.INDEX_FILE))
 with open(ROOT / core.CHUNKS_FILE, encoding="utf-8") as f:
     chunks = json.load(f)
-with open(ROOT / "data/questions.json", encoding="utf-8") as f:
-    questions = json.load(f)
+with open(ROOT / core.QUESTIONS_FILE, encoding="utf-8") as f:
+    questions = [q for q in json.load(f) if q["category"] != "agent"]  # agent questions: agent_eval_runner.py
 
 print(f"Mode: {'full' if args.full else 'retrieval only'} | "
-      f"rerank={core.USE_RERANK} bm25={core.USE_BM25} rewrite={core.USE_REWRITE}")
+      f"rerank={core.USE_RERANK} bm25={core.USE_BM25} rewrite={core.USE_REWRITE} "
+      f"decompose={core.USE_DECOMPOSE} expand={core.USE_EXPANSION} "
+      f"clarify={core.USE_CLARIFY} index={core.INDEX_FILE}")
 retrieve("warm up", index, chunks)  # load reranker + BM25 before timing
 
 # ---------------- Run every question ----------------
@@ -44,16 +62,19 @@ for i, q in enumerate(questions, 1):
     t0 = time.perf_counter()
     history = [{"role": "user", "content": h} for h in q.get("history", [])]
     search_q = rewrite_query(q["question"], history) if core.USE_REWRITE else q["question"]
-    results = retrieve(search_q, index, chunks)
+    queries = plan_queries(search_q)
+    results = retrieve_multi(queries, index, chunks)
     expected = expected_pages(q)
 
     row = {
         "question": q["question"],
         "category": q["category"],
+        "sub_type": q.get("sub_type"),
         "difficulty": q.get("difficulty"),
         "priority": q.get("priority", False),
         "is_followup": bool(history),
         "rewritten_query": search_q if history else None,
+        "queries": queries if len(queries) > 1 else None,
         "has_expected": bool(expected),
         "rank": first_hit_rank(results, expected) if expected else None,
         "top_rerank": results[0].get("rerank_score") if results else None,
@@ -69,7 +90,9 @@ for i, q in enumerate(questions, 1):
         answer, _ = answer_question(q["question"], index, chunks, results=results, history=history)
         row["answer"] = answer
         row["expected_answer"] = q.get("expected_answer")
-        row["refused"] = core.REFUSAL.lower().rstrip(".") in answer.lower()
+        row["clarified"] = answer.startswith(CLARIFY_PREFIX)
+        # a clarification counts as "not answering": right for vague questions, wrong otherwise
+        row["refused"] = core.REFUSAL.lower().rstrip(".") in answer.lower() or row["clarified"]
         row["correct"] = None  # fill in by hand after reading the answer: true / false
 
     row["latency"] = round(time.perf_counter() - t0, 2)
@@ -113,6 +136,9 @@ if args.full:
     print(f"\nCorrect refusals (out-of-scope/ambiguous): "
           f"{sum(r['refused'] for r in no_exp)}/{len(no_exp)}")
     print(f"Wrong refusals (answerable questions): {len(wrong_ref)}")
+    clar = [r for r in rows if r.get("clarified")]
+    print(f"Clarifying questions asked: {len(clar)} "
+          f"({sum(r['category'] == 'ambiguous' for r in clar)} on ambiguous questions)")
 
 print("\n--- Failures ---")
 for r in rows:
@@ -125,6 +151,8 @@ for r in rows:
 
 out = ROOT / args.out
 with open(out, "w", encoding="utf-8") as f:
-    json.dump({"config": {"full": args.full, "rerank": core.USE_RERANK, "bm25": core.USE_BM25, "rewrite": core.USE_REWRITE},
+    json.dump({"config": {"full": args.full, "rerank": core.USE_RERANK, "bm25": core.USE_BM25, "rewrite": core.USE_REWRITE,
+                          "decompose": core.USE_DECOMPOSE, "expand": core.USE_EXPANSION,
+                          "clarify": core.USE_CLARIFY, "index": core.INDEX_FILE},
                "summary": overall, "results": rows}, f, ensure_ascii=False, indent=2)
 print(f"\nSaved {args.out}")

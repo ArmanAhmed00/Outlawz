@@ -1,0 +1,353 @@
+[
+  {
+    "question": "What regulation lays down rules relating to the protection of natural persons with regard to the processing of personal data and repeals Directive 95/46/EC?",
+    "category": "factual",
+    "answer": "The regulation that lays down rules relating to the protection of natural persons with regard to the processing of personal data and repeals Directive 95/46/EC is Regulation (EU) 2016/679 of the European Parliament and of the Council, also known as the General Data Protection Regulation (GDPR) (Source: OJ_L_202401689_EN_TXT.pdf p.3).",
+    "expected": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+    "hit": false,
+    "refused": false,
+    "best_score": 0.6976710557937622
+  },
+  {
+    "question": "What is the definition of 'personal data' under Article 4(1)?",
+    "category": "factual",
+    "answer": "The definition of 'personal data' under Article 4(1) is \"any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person\" (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.3).",
+    "expected": "'personal data' means any information relating to an identified or identifiable natural person ('data subject'); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6441265940666199
+  },
+  {
+    "question": "Who is defined as a 'controller' in Article 4(7)?",
+    "category": "factual",
+    "answer": "A 'controller' is defined in Article 4(7) as the natural or legal person, public authority, agency, or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data. This definition is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf p.4.",
+    "expected": "The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.592150866985321
+  },
+  {
+    "question": "What is the general age threshold for a child's valid consent in relation to information society services under Article 8(1)?",
+    "category": "factual",
+    "answer": "The general age threshold for a child's valid consent in relation to information society services under Article 8(1) is at least 16 years old. If the child is below the age of 16, the processing of their personal data shall be lawful only if consent is given or authorized by the holder of parental responsibility over the child. Member States may set a lower age, but it cannot be below 13 years. This information is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf p.9.",
+    "expected": "At least 16 years old (though Member States may provide for a lower age, provided it is not below 13 years).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.7381808757781982
+  },
+  {
+    "question": "What timeframe does the controller have under Article 12(3) to provide information on action taken on a request to the data subject?",
+    "category": "factual",
+    "answer": "Under Article 12(3), the controller must provide information on action taken on a request to the data subject without undue delay and in any event within one month of receipt of the request. This period may be extended by two further months if necessary, taking into account the complexity and number of the requests. The controller must inform the data subject of any such extension within one month of receipt of the request, along with the reasons for the delay. This information is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf p.12.",
+    "expected": "Without undue delay and in any event within one month of receipt of the request (extendable by two further months where necessary).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.782568097114563
+  },
+  {
+    "question": "According to Article 2(2), which types of processing activities fall outside the material scope of this Regulation?",
+    "category": "factual",
+    "answer": "According to Article 2(2), the following types of processing activities fall outside the material scope of this Regulation:\n\n(a) Processing of personal data in the course of an activity which falls outside the scope of Union law;\n(b) Processing by the Member States when carrying out activities which fall within the scope of Chapter 2 of Title V of the TEU;\n(c) Processing by a natural person in the course of a purely personal or household activity;\n(d) Processing by competent authorities for the purposes of the prevention, investigation, detection or prosecution of criminal offenses.\n\nThis information is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf, p.2.",
+    "expected": "Processing (a) outside the scope of Union law; (b) by Member States under Chapter 2 Title V TEU; (c) by a natural person in purely personal or household activity; (d) by competent authorities for prevention, investigation, detection or prosecution of criminal offences/penalties.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.652254045009613
+  },
+  {
+    "question": "What directive is referred to in Article 4(25) to define an 'information society service'?",
+    "category": "factual",
+    "answer": "The directive referred to in Article 4(25) to define an 'information society service' is Directive (EU) 2015/1535 of the European Parliament. This information is sourced from the context provided on page 6 of the document (CELEX_02016R0679-20160504_EN_TXT.pdf p.6).",
+    "expected": "Directive (EU) 2015/1535 of the European Parliament and of the Council.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6176589131355286
+  },
+  {
+    "question": "Under Article 10, when can personal data relating to criminal convictions and offences be processed?",
+    "category": "factual",
+    "answer": "Under Article 10, personal data relating to criminal convictions and offences can be processed only under the control of official authority or when the processing is authorized by Union or Member State law that provides for appropriate safeguards for the rights and freedoms of data subjects. This means that there must be a legal basis for the processing, ensuring that the rights of individuals are protected (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.11).",
+    "expected": "Only under the control of official authority or when authorised by Union or Member State law providing for appropriate safeguards.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.7344115376472473
+  },
+  {
+    "question": "What is the requirement under Article 19 regarding recipient notification when data is rectified or erased?",
+    "category": "factual",
+    "answer": "Under Article 19, the controller is required to communicate any rectification or erasure of personal data, or restriction of processing, to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort. Additionally, the controller must inform the data subject about those recipients if the data subject requests it. This information is sourced from the provided context on page 19 of the document.",
+    "expected": "The controller shall communicate any rectification, erasure, or restriction of processing to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.5857433080673218
+  },
+  {
+    "question": "According to Article 21(2), what right does a data subject have when personal data are processed for direct marketing purposes?",
+    "category": "factual",
+    "answer": "According to Article 21(2), the data subject has the right to object at any time to the processing of personal data concerning him or her for direct marketing purposes. This includes profiling to the extent that it is related to such direct marketing. If the data subject objects, the personal data shall no longer be processed for those purposes. This information is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf, p.20.",
+    "expected": "The data subject shall have the right to object at any time to processing of personal data concerning him or her for such marketing, including profiling related to such direct marketing.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.7221164107322693
+  },
+  {
+    "question": "What is 'pseudonymisation' according to Article 4(5)?",
+    "category": "factual",
+    "answer": "According to Article 4(5), 'pseudonymisation' means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person. This definition is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf p.4.",
+    "expected": "The processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and subject to technical and organizational measures.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.5916604995727539
+  },
+  {
+    "question": "How are the territorial scope conditions detailed across establishment in the EU versus non-EU controllers targeting data subjects in the EU?",
+    "category": "cross-reference",
+    "answer": "The territorial scope conditions regarding the establishment of controllers or processors in the EU versus non-EU controllers targeting data subjects in the EU are detailed as follows:\n\n1. **Establishment in the EU**: The Regulation applies to the processing of personal data in the context of the activities of an establishment of a controller or a processor in the Union, regardless of whether the processing takes place in the Union or not (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.3).\n\n2. **Non-EU Controllers**: For controllers or processors not established in the Union, if they process personal data of data subjects residing in the Union, they must designate a representative in the Union (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.24). This applies particularly when the processing is not occasional and does not involve large-scale processing of special categories of data.\n\n3. **Substantial Effect on Data Subjects**: A supervisory authority is considered \"concerned\" by the processing of personal data if the controller or processor is established in the territory of the Member State, or if data subjects residing in that Member State are substantially affected by the processing (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.6).\n\nIn summary, the Regulation applies to both EU-established controllers/processors and non-EU controllers/processors targeting EU data subjects, with specific obligations for non-EU",
+    "expected": "Article 3(1) applies to processing in the context of an establishment in the Union regardless of where processing takes place. Article 3(2) applies to non-EU controllers offering goods/services to EU data subjects or monitoring their behavior in the EU.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6037940979003906
+  },
+  {
+    "question": "How do the lawful grounds for processing standard personal data differ from the conditions required to process special categories of personal data?",
+    "category": "cross-reference",
+    "answer": "I don't have enough information to answer this. The provided context does not specify the lawful grounds for processing standard personal data or the specific conditions required to process special categories of personal data.",
+    "expected": "Standard processing requires meeting at least one ground under Article 6(1) (e.g. consent, contract, legal obligation). Special category processing is prohibited under Article 9(1) unless an exception in Article 9(2) applies (e.g. explicit consent, employment law obligations, vital interests).",
+    "hit": true,
+    "refused": true,
+    "best_score": 0.6006430387496948
+  },
+  {
+    "question": "What differences exist between information provided when personal data are collected directly from the data subject versus obtained from a third party?",
+    "category": "cross-reference",
+    "answer": "I don't have enough information to answer this. The provided context only discusses the information that must be provided when personal data are collected directly from the data subject, but it does not specify the information required when data is obtained from a third party.",
+    "expected": "Under Article 13 (collected from data subject), information includes statutory/contractual necessity and consequences of failing to provide data. Under Article 14 (not obtained from data subject), information includes categories of data concerned and source/public accessibility of data.",
+    "hit": true,
+    "refused": true,
+    "best_score": 0.5447433590888977
+  },
+  {
+    "question": "How is scientific research processing treated across core principles, lawful purposes, and data subject rights to object?",
+    "category": "cross-reference",
+    "answer": "Based on the provided context, scientific research processing is treated with specific considerations across core principles, lawful purposes, and data subject rights to object as follows:\n\n1. **Core Principles**: Processing for scientific or historical research purposes or statistical purposes must adhere to appropriate safeguards to protect the rights and freedoms of the data subjects. This includes implementing technical and organizational measures to ensure data minimization (Source: p.74).\n\n2. **Lawful Purposes**: The processing of personal data for scientific or historical research or statistical purposes is permitted under certain conditions. It must comply with the safeguards outlined in Article 89(1) and should not impair the objectives of the processing. The data controller is required to take appropriate measures to protect the rights and legitimate interests of the data subjects (Source: p.16).\n\n3. **Data Subject Rights to Object**: Data subjects have the right to object to the processing of their personal data for scientific or historical research purposes unless the processing is necessary for the performance of a task carried out for reasons of public interest (Source: p.20).\n\nIn summary, scientific research processing is governed by strict safeguards to protect data subjects, is recognized as a lawful purpose under specific conditions, and allows data subjects the right to object under certain circumstances.",
+    "expected": "Article 5(1)(b) allows further processing for scientific research as compatible with initial purposes; Article 9(2)(j) exempts special categories for scientific research; Article 21(6) allows data subjects to object to research processing unless necessary for public interest tasks.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6349583268165588
+  },
+  {
+    "question": "Where in the document are the conditions and rights concerning automated individual decision-making, including profiling, defined?",
+    "category": "cross-reference",
+    "answer": "The conditions and rights concerning automated individual decision-making, including profiling, are defined in Article 22 of the document, specifically in the first paragraph which outlines the right of the data subject not to be subject to decisions based solely on automated processing that produce legal effects or significantly affect them. Additional references to the existence of automated decision-making and the requirement for meaningful information about the logic involved can be found in multiple sections, including pages 14, 15, and 17 of the document. \n\n(Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.21, p.14, p.15, p.17)",
+    "expected": "Definition in Article 4(4) (p. 4), data subject notification obligations in Article 13(2)(f) / Article 14(2)(g) (p. 14, 15), right of access in Article 15(1)(h) (p. 17), and general prohibition/exceptions in Article 22 (p. 21).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6900385022163391
+  },
+  {
+    "question": "What brief mention is made of Member State limitations on specific data types compared to the detailed rules provided in Article 9?",
+    "category": "cross-reference",
+    "answer": "The context mentions that Member States may maintain or introduce further conditions, including limitations, regarding the processing of genetic data, biometric data, or data concerning health (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.11). This indicates that while Article 9 provides detailed rules, Member States have the authority to impose additional restrictions on specific types of data.",
+    "expected": "Article 9(1)-(2) provides detailed prohibitions and specific exceptions for special categories, while Article 9(4) gives a summary clause allowing Member States to introduce further conditions or limitations regarding genetic data, biometric data, or health data.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.5913058519363403
+  },
+  {
+    "question": "How do the rules governing data portability interact with the right to erasure?",
+    "category": "cross-reference",
+    "answer": "I don't have enough information to answer this. The provided context discusses the right to data portability and the right to erasure but does not explain how these two rights interact with each other.",
+    "expected": "Article 20(3) explicitly establishes that the exercise of the right to data portability under Article 20(1) shall be without prejudice to Article 17 (right to erasure).",
+    "hit": true,
+    "refused": true,
+    "best_score": 0.5529366135597229
+  },
+  {
+    "question": "How are restrictions by legislative measures specified regarding scope, subject matter, and controller safeguards?",
+    "category": "cross-reference",
+    "answer": "Restrictions by legislative measures are specified in the following ways:\n\n1. **Scope of Restrictions**: The legislative measure must outline the scope of the restrictions introduced (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.22).\n\n2. **Categories of Controllers**: The measure should specify the controller or categories of controllers involved in the processing (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.22).\n\n3. **Safeguards**: The legislative measure must include safeguards to prevent abuse or unlawful access or transfer of personal data (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.22).\n\nThese provisions ensure that the restrictions are clearly defined and that there are mechanisms in place to protect the rights and freedoms of data subjects.",
+    "expected": "Article 23(1) specifies the permissible scope (national security, defence, public security, etc.), while Article 23(2) lists mandatory detailed provisions including processing purposes, data categories, restriction scope, and safeguards against abuse.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.5672077536582947
+  },
+  {
+    "question": "What rules govern data anonymization and user privacy protection in this text?",
+    "category": "stress-test",
+    "answer": "The rules governing data anonymization and user privacy protection in the provided text include the following:\n\n1. **Anonymisation and Encryption**: Providers are encouraged to use measures such as anonymisation and encryption to ensure compliance with privacy principles (Source: OJ_L_202401689_EN_TXT.pdf p.20).\n\n2. **Technology for Data Processing**: There is a mention of using technology that allows algorithms to be brought to the data, enabling the training of AI systems without transmitting or copying raw or structured data, which is aimed at protecting personal data (Source: OJ_L_202401689_EN_TXT.pdf p.20).\n\n3. **Pseudonymisation and Security Measures**: The text highlights the importance of state-of-the-art security and privacy-preserving measures, including pseudonymisation, to protect personal data, especially special categories of personal data (Source: OJ_L_202401689_EN_TXT.pdf p.58).\n\n4. **Rights of Rightsholders**: There are specific rules regarding text and data mining, where rightsholders can reserve their rights to prevent such activities unless they are for scientific research purposes. Providers of general-purpose AI models must obtain authorization from rightsholders for text and data mining (Source: OJ_L_202401689_EN_TXT.pdf p.28).\n\n5. **Exemption for Scientific Research**: The regulation does not apply to AI systems or models developed solely for scientific research and development, indicating a specific",
+    "expected": "The text explicitly defines 'pseudonymisation' (Article 4(5)), but does not define or specify full anonymization rules within these pages.",
+    "hit": false,
+    "refused": false,
+    "best_score": 0.5246339440345764
+  },
+  {
+    "question": "What specific provisions are outlined in Article 2(2)(c)?",
+    "category": "stress-test",
+    "answer": "I don't have enough information to answer this. The provided context does not include the text of Article 2(2)(c) or specify its provisions.",
+    "expected": "Article 2(2)(c) states that the Regulation does not apply to processing of personal data 'by a natural person in the course of a purely personal or household activity'.",
+    "hit": false,
+    "refused": true,
+    "best_score": 0.48669272661209106
+  },
+  {
+    "question": "Is a controller allowed to charge a fee for responding to a data access request?",
+    "category": "stress-test",
+    "answer": "Yes, a controller is allowed to charge a reasonable fee for responding to a data access request if the requests from a data subject are manifestly unfounded or excessive, particularly due to their repetitive character. This fee should take into account the administrative costs of providing the information or communication or taking the action requested. (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.13)",
+    "expected": "Generally no, information shall be provided free of charge under Article 12(5). However, if requests are manifestly unfounded or excessive (especially repetitive), the controller may charge a reasonable fee or refuse to act.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.5634243488311768
+  },
+  {
+    "question": "When was Regulation (EU) 2016/679 adopted and when was its Corrigendum published in the Official Journal?",
+    "category": "stress-test",
+    "answer": "Regulation (EU) 2016/679 was adopted on 27 April 2016. Its Corrigendum was published in the Official Journal on 23 May 2018 (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.1).",
+    "expected": "Adopted on 27 April 2016; Corrigendum published on 23 May 2018 (OJ L 127).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.625191330909729
+  },
+  {
+    "question": "Under Article 9(1), what categories of data are NOT permitted to be processed as standard data?",
+    "category": "stress-test",
+    "answer": "Under Article 9(1), the following categories of data are NOT permitted to be processed as standard data:\n\n1. Personal data revealing racial or ethnic origin\n2. Political opinions\n3. Religious or philosophical beliefs\n4. Trade union membership\n5. Genetic data\n6. Biometric data for the purpose of uniquely identifying a natural person\n7. Data concerning health\n8. Data concerning a natural person's sex life or sexual orientation\n\nThis information is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf, p.10.",
+    "expected": "Personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, genetic data, biometric data for unique identification, data concerning health, or data concerning a natural person's sex life or sexual orientation.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6596378087997437
+  },
+  {
+    "question": "If a non-EU business tracks user habits of people living in France on its app, does GDPR apply to them and do they need parental consent for 14-year-olds?",
+    "category": "stress-test",
+    "answer": "Yes, the GDPR applies to a non-EU business that tracks user habits of people living in France on its app, as it applies to any entity processing personal data of individuals located in the EU, regardless of the entity's location. \n\nRegarding parental consent for 14-year-olds, according to the context provided, the processing of personal data of a child is lawful only if the child is at least 16 years old, or if the child is below 16, consent must be given or authorized by the holder of parental responsibility. Member States can set a lower age limit for consent, but it cannot be below 13 years. Therefore, if the business is operating under French law, they would need parental consent for users who are under 16, which includes 14-year-olds. \n\nThis information is based on the source from CELEX_02016R0679-20160504_EN_TXT.pdf p.9.",
+    "expected": "Yes, GDPR applies under Article 3(2)(b) (monitoring behavior in Union). For a 14-year-old, processing is lawful under Article 8(1) only with parental consent/authorization, unless Member State law permits lower age (down to 13).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.47424250841140747
+  },
+  {
+    "question": "What are the six principles relating to processing of personal data listed under Article 5(1)?",
+    "category": "stress-test",
+    "answer": "The six principles relating to the processing of personal data listed under Article 5(1) are:\n\n1. Processed lawfully, fairly, and in a transparent manner in relation to the data subject ('lawfulness, fairness, and transparency').\n2. Collected for specified, legitimate purposes and not further processed in a manner that is incompatible with those purposes ('purpose limitation').\n3. Adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed ('data minimisation').\n4. Accurate and, where necessary, kept up to date; every reasonable step must be taken to ensure that personal data that are inaccurate are erased or rectified without delay ('accuracy').\n5. Kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed ('storage limitation').\n6. Processed in a manner that ensures appropriate security of the personal data, including protection against unauthorized or unlawful processing and against accidental loss, destruction, or damage ('integrity and confidentiality').\n\n(Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.6-7)",
+    "expected": "(a) Lawfulness, fairness and transparency; (b) Purpose limitation; (c) Data minimisation; (d) Accuracy; (e) Storage limitation; (f) Integrity and confidentiality.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6481986045837402
+  },
+  {
+    "question": "What condition applies regarding the burden of proof when a controller claims a data subject's request is manifestly unfounded?",
+    "category": "stress-test",
+    "answer": "The controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request. This means that if the controller claims that a data subject's request is manifestly unfounded, it is the controller's responsibility to provide evidence supporting that claim. This information is sourced from the context provided on page 13 of the document (CELEX_02016R0679-20160504_EN_TXT.pdf).",
+    "expected": "Under Article 12(5), the controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6437271237373352
+  },
+  {
+    "question": "Can I take back my consent whenever I want, and does that make everything they did before illegal?",
+    "category": "stress-test",
+    "answer": "Yes, you can take back your consent whenever you want. The withdrawal of consent does not affect the lawfulness of processing based on consent before its withdrawal (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.9). Therefore, everything that was done before you withdrew your consent remains legal.",
+    "expected": "Under Article 7(3), you have the right to withdraw consent at any time. However, the withdrawal shall not affect the lawfulness of processing based on consent before its withdrawal.",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.4696912467479706
+  },
+  {
+    "question": "What were the administrative fine limits for data breaches under the 1995 Data Protection Directive?",
+    "category": "stress-test",
+    "answer": "I don't have enough information to answer this.",
+    "expected": "The provided text contains Directive 95/46/EC repeal references but does not specify fine limits under the 1995 Directive.",
+    "hit": false,
+    "refused": true,
+    "best_score": 0.6088584661483765
+  },
+  {
+    "question": "What is 'biometric data', what is 'genetic data', and what Article defines them?",
+    "category": "stress-test",
+    "answer": "'Biometric data' is defined as personal data resulting from specific technical processing relating to the physical, physiological, or behavioral characteristics of a natural person. This data can allow for the authentication, identification, or categorization of natural persons and for the recognition of emotions of natural persons. It is defined in Article 4, point (14) of Regulation (EU) 2016/679.\n\n'Genetic data' refers to personal data relating to the inherited or acquired genetic characteristics of a natural person, which provide unique information about the physiology or health of that person and result from an analysis of a biological sample from that individual. It is defined in Article 4, point (13) of Regulation (EU) 2016/679.\n\n(Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.5 and OJ_L_202401689_EN_TXT.pdf p.4)",
+    "expected": "Genetic data: personal data relating to inherited or acquired genetic characteristics (Article 4(13)). Biometric data: personal data from specific technical processing relating to physical/physiological/behavioural characteristics (Article 4(14)). Both defined in Article 4 (p. 5).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.5703817009925842
+  },
+  {
+    "question": "Under what specific conditions can personal data be processed for compatibility with a secondary purpose?",
+    "category": "stress-test",
+    "answer": "Personal data can be processed for compatibility with a secondary purpose under the following specific conditions:\n\n1. **Link Between Purposes**: The controller must take into account any link between the purposes for which the personal data were initially collected and the purposes of the intended further processing (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.8).\n\n2. **Specified, Explicit, and Legitimate Purposes**: The data must have been collected for specified, explicit, and legitimate purposes and not further processed in a manner that is incompatible with those purposes. However, further processing for archiving purposes in the public interest, scientific or historical research purposes, or statistical purposes is not considered incompatible with the initial purposes (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.7).\n\n3. **Necessary for Public Interest or Official Authority**: Processing may be necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.8).\n\n4. **Legitimate Interests**: Processing may also be necessary for the purposes of the legitimate interests pursued by the controller or by a third party, unless these interests are overridden by the interests or fundamental rights and freedoms of the data subject (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p",
+    "expected": "Under Article 6(4), taking into account links between purposes, context, nature of data (Article 9/10), possible consequences, and existence of appropriate safeguards (encryption/pseudonymisation).",
+    "hit": true,
+    "refused": false,
+    "best_score": 0.6270872950553894
+  },
+  {
+    "question": "What is the maximum penalty fine for failing to comply with an order by a Supervisory Authority?",
+    "category": "stress-test",
+    "answer": "The maximum penalty fine for failing to comply with an order by a Supervisory Authority is up to 20,000,000 EUR, or in the case of an undertaking, up to 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.72).",
+    "expected": "The provided text excerpt (pages 1-23) covers Articles 1 to 24 and does not contain the penalty fine amounts.",
+    "hit": false,
+    "refused": false,
+    "best_score": 0.6129034757614136
+  },
+  {
+    "question": "What is the weather in Paris today?",
+    "category": "out-of-scope",
+    "answer": "I don't have enough information to answer this.",
+    "expected": null,
+    "hit": null,
+    "refused": true,
+    "best_score": 0.14499901235103607
+  },
+  {
+    "question": "Who won the 2024 FIFA Men's Ballon d'Or?",
+    "category": "out-of-scope",
+    "answer": "I don't have enough information to answer this.",
+    "expected": null,
+    "hit": null,
+    "refused": true,
+    "best_score": 0.23147574067115784
+  },
+  {
+    "question": "How do I configure a PostgreSQL database connection in Python using SQLAlchemy?",
+    "category": "out-of-scope",
+    "answer": "I don't have enough information to answer this.",
+    "expected": null,
+    "hit": null,
+    "refused": true,
+    "best_score": 0.1709761917591095
+  },
+  {
+    "question": "What is the stock price of Apple Inc. today?",
+    "category": "out-of-scope",
+    "answer": "I don't have enough information to answer this.",
+    "expected": null,
+    "hit": null,
+    "refused": true,
+    "best_score": 0.16411197185516357
+  },
+  {
+    "question": "Tell me about the requirements.",
+    "category": "ambiguous",
+    "answer": "The requirements for high-risk AI systems include the following:\n\n1. High-risk AI systems must be trained and tested on data that reflects the specific geographical, behavioral, contextual, or functional setting in which they are intended to be used. If they meet this criterion, they shall be presumed to comply with the relevant requirements laid down in Article 10(4) (Source: OJ_L_202401689_EN_TXT.pdf p.77).\n\n2. High-risk AI systems that have been certified or for which a statement of conformity has been issued under a cybersecurity scheme (as per Regulation (EU) 2019/881) are also considered to comply with certain requirements (Source: OJ_L_202401689_EN_TXT.pdf p.77).\n\n3. The documentation for these systems must include a description of the expected output and output quality, decisions regarding trade-offs made in technical solutions, and a description of the system architecture (Source: OJ_L_202401689_EN_TXT.pdf p.130).\n\n4. Additional information required includes the name and contact details of the provider and deployers involved in real-world testing, a brief description of the AI system and its intended purpose, a summary of the testing plan, and information on any suspension or termination of testing (Source: OJ_L_202401689_EN_TXT.pdf p.138).\n\n5. If a high-risk AI system does not meet the requirements, it must inform the Commission with a detailed explanation, which the",
+    "expected": null,
+    "hit": null,
+    "refused": false,
+    "best_score": 0.3867810368537903
+  },
+  {
+    "question": "What are the rules regarding consent?",
+    "category": "ambiguous",
+    "answer": "The rules regarding consent, as outlined in the provided context, include the following key points:\n\n1. **Right to Withdraw Consent**: The data subject has the right to withdraw their consent at any time. The withdrawal of consent does not affect the lawfulness of processing based on consent prior to its withdrawal. It should be as easy to withdraw consent as it is to give it (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.9).\n\n2. **Presentation of Consent**: If consent is given in a written declaration that also concerns other matters, the request for consent must be presented in a manner that is clearly distinguishable from the other matters. It should be in an intelligible and easily accessible form, using clear and plain language (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.9).\n\n3. **Definition of Consent**: Consent must be freely given, specific, informed, and unambiguous. It is an indication of the data subject's wishes (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.4).\n\n4. **Demonstration of Consent**: When processing is based on consent, the controller must be able to demonstrate that the data subject has consented to the processing of their personal data (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.9).\n\n5. **",
+    "expected": null,
+    "hit": null,
+    "refused": false,
+    "best_score": 0.46236103773117065
+  },
+  {
+    "question": "How does the law deal with exceptions?",
+    "category": "ambiguous",
+    "answer": "The law, specifically Directive (EU) 2019/790, introduces exceptions and limitations that allow for reproductions and extractions of works or other subject matter for the purpose of text and data mining (Source: OJ_L_202401689_EN_TXT.pdf p.27). Additionally, there are strict exceptions for real-time remote biometric identification, which are regulated to ensure that fundamental rights are protected (Source: OJ_L_202401689_EN_TXT.pdf p.25). \n\nIn the context of law enforcement, the use of certain systems is prohibited except in narrowly defined situations where the use is strictly necessary to achieve a substantial public interest, indicating that exceptions are tightly controlled and must outweigh associated risks (Source: OJ_L_202401689_EN_TXT.pdf p.9). \n\nOverall, the law establishes a framework for exceptions that balances the need for certain uses against the protection of fundamental rights.",
+    "expected": null,
+    "hit": null,
+    "refused": false,
+    "best_score": 0.3917935788631439
+  }
+]

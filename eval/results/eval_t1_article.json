@@ -1,0 +1,2137 @@
+{
+  "config": {
+    "full": false,
+    "rerank": true,
+    "bm25": true,
+    "rewrite": true,
+    "decompose": false,
+    "expand": false,
+    "clarify": true,
+    "index": "data/index_article.faiss"
+  },
+  "summary": {
+    "n": 36,
+    "recall@1": 0.75,
+    "recall@3": 0.8333333333333334,
+    "recall@5": 0.8611111111111112,
+    "mrr": 0.7939814814814814,
+    "latency": 0.4685106382978723
+  },
+  "results": [
+    {
+      "question": "What regulation lays down rules relating to the protection of natural persons with regard to the processing of personal data and repeals Directive 95/46/EC?",
+      "category": "factual",
+      "difficulty": "easy",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 4,
+      "top_rerank": 7.636055946350098,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 2,
+          "faiss": 0.616,
+          "rerank": 7.64
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.642,
+          "rerank": 6.43
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 76,
+          "faiss": 0.702,
+          "rerank": 6.28
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.661,
+          "rerank": 6.2
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.616,
+          "rerank": 5.68
+        }
+      ],
+      "latency": 0.54
+    },
+    {
+      "question": "What is the definition of 'personal data' under Article 4(1)?",
+      "category": "factual",
+      "difficulty": "easy",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.332822799682617,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.704,
+          "rerank": 7.33
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.644,
+          "rerank": 5.46
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.626,
+          "rerank": 5.35
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.648,
+          "rerank": 5.25
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.612,
+          "rerank": 5.12
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "Who is defined as a 'controller' in Article 4(7)?",
+      "category": "factual",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 1.8014694452285767,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.558,
+          "rerank": 1.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.574,
+          "rerank": 1.28
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.562,
+          "rerank": 0.71
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.479,
+          "rerank": 0.67
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 26,
+          "faiss": 0.536,
+          "rerank": -0.12
+        }
+      ],
+      "latency": 0.36
+    },
+    {
+      "question": "What is the general age threshold for a child's valid consent in relation to information society services under Article 8(1)?",
+      "category": "factual",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.27293586730957,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.777,
+          "rerank": 7.27
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.445,
+          "rerank": -1.85
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.482,
+          "rerank": -4.45
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.427,
+          "rerank": -4.64
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.421,
+          "rerank": -5.05
+        }
+      ],
+      "latency": 0.4
+    },
+    {
+      "question": "What timeframe does the controller have under Article 12(3) to provide information on action taken on a request to the data subject?",
+      "category": "factual",
+      "difficulty": "easy",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 8.050346374511719,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 12,
+          "faiss": 0.739,
+          "rerank": 8.05
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.633,
+          "rerank": 5.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 12,
+          "faiss": 0.675,
+          "rerank": 4.54
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.638,
+          "rerank": 2.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.627,
+          "rerank": 2.33
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "According to Article 2(2), which types of processing activities fall outside the material scope of this Regulation?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.307811737060547,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 2,
+          "faiss": 0.757,
+          "rerank": 7.31
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 2,
+          "faiss": 0.715,
+          "rerank": 4.6
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.653,
+          "rerank": 3.23
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 45,
+          "faiss": 0.591,
+          "rerank": 2.18
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.604,
+          "rerank": 2.04
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "What directive is referred to in Article 4(25) to define an 'information society service'?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 2,
+      "top_rerank": 3.0175423622131348,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.458,
+          "rerank": 3.02
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.408,
+          "rerank": 1.3
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.473,
+          "rerank": -0.44
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.548,
+          "rerank": -1.88
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 77,
+          "faiss": 0.372,
+          "rerank": -2.02
+        }
+      ],
+      "latency": 0.39
+    },
+    {
+      "question": "Under Article 10, when can personal data relating to criminal convictions and offences be processed?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 9.52424430847168,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.777,
+          "rerank": 9.52
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.589,
+          "rerank": 6.55
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 31,
+          "faiss": 0.523,
+          "rerank": 5.92
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 24,
+          "faiss": 0.43,
+          "rerank": 5.15
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 28,
+          "faiss": 0.539,
+          "rerank": 4.57
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "What is the requirement under Article 19 regarding recipient notification when data is rectified or erased?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.384324550628662,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 19,
+          "faiss": 0.709,
+          "rerank": 7.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.561,
+          "rerank": 1.94
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.531,
+          "rerank": 1.28
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.509,
+          "rerank": 0.97
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.547,
+          "rerank": 0.53
+        }
+      ],
+      "latency": 0.36
+    },
+    {
+      "question": "According to Article 21(2), what right does a data subject have when personal data are processed for direct marketing purposes?",
+      "category": "factual",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 9.401485443115234,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.737,
+          "rerank": 9.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.653,
+          "rerank": 6.74
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.625,
+          "rerank": 6.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.646,
+          "rerank": 5.87
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.597,
+          "rerank": 5.8
+        }
+      ],
+      "latency": 0.44
+    },
+    {
+      "question": "What is 'pseudonymisation' according to Article 4(5)?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 5.551752090454102,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.569,
+          "rerank": 5.55
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 52,
+          "faiss": 0.467,
+          "rerank": -0.82
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 52,
+          "faiss": 0.437,
+          "rerank": -1.67
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 58,
+          "faiss": 0.469,
+          "rerank": -2.07
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 23,
+          "faiss": 0.474,
+          "rerank": -2.53
+        }
+      ],
+      "latency": 0.4
+    },
+    {
+      "question": "How are the territorial scope conditions detailed across establishment in the EU versus non-EU controllers targeting data subjects in the EU?",
+      "category": "cross-reference",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 2.2400951385498047,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.709,
+          "rerank": 2.24
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 35,
+          "faiss": 0.489,
+          "rerank": -2.6
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 36,
+          "faiss": 0.466,
+          "rerank": -2.65
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 40,
+          "faiss": 0.492,
+          "rerank": -3.72
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 90,
+          "faiss": 0.457,
+          "rerank": -4.37
+        }
+      ],
+      "latency": 0.47
+    },
+    {
+      "question": "How do the lawful grounds for processing standard personal data differ from the conditions required to process special categories of personal data?",
+      "category": "cross-reference",
+      "difficulty": "hard",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.996068000793457,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.622,
+          "rerank": 5.0
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.638,
+          "rerank": 4.97
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.652,
+          "rerank": 4.83
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.652,
+          "rerank": 4.54
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.635,
+          "rerank": 4.51
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "What differences exist between information provided when personal data are collected directly from the data subject versus obtained from a third party?",
+      "category": "cross-reference",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.8240532875061035,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.581,
+          "rerank": 4.82
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.544,
+          "rerank": 3.46
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.562,
+          "rerank": 2.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.552,
+          "rerank": 2.36
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.542,
+          "rerank": 2.15
+        }
+      ],
+      "latency": 1.01
+    },
+    {
+      "question": "How is scientific research processing treated across core principles, lawful purposes, and data subject rights to object?",
+      "category": "cross-reference",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 3.842644214630127,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.582,
+          "rerank": 3.84
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 74,
+          "faiss": 0.609,
+          "rerank": 3.39
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.501,
+          "rerank": 2.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.618,
+          "rerank": 2.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.555,
+          "rerank": 2.17
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "Where in the document are the conditions and rights concerning automated individual decision-making, including profiling, defined?",
+      "category": "cross-reference",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 5.540577411651611,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.705,
+          "rerank": 5.54
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.695,
+          "rerank": 5.47
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.567,
+          "rerank": 4.12
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.535,
+          "rerank": 2.01
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.484,
+          "rerank": 1.48
+        }
+      ],
+      "latency": 0.35
+    },
+    {
+      "question": "What brief mention is made of Member State limitations on specific data types compared to the detailed rules provided in Article 9?",
+      "category": "cross-reference",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 2.6019182205200195,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.628,
+          "rerank": 2.6
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.515,
+          "rerank": 0.79
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.557,
+          "rerank": 0.7
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.556,
+          "rerank": -0.23
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.566,
+          "rerank": -1.19
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "How do the rules governing data portability interact with the right to erasure?",
+      "category": "cross-reference",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 3,
+      "top_rerank": 1.99631667137146,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.598,
+          "rerank": 2.0
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.612,
+          "rerank": 1.09
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 19,
+          "faiss": 0.598,
+          "rerank": 0.61
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.444,
+          "rerank": -0.21
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.452,
+          "rerank": -0.22
+        }
+      ],
+      "latency": 0.41
+    },
+    {
+      "question": "How are restrictions by legislative measures specified regarding scope, subject matter, and controller safeguards?",
+      "category": "cross-reference",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.79714298248291,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.559,
+          "rerank": 4.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 22,
+          "faiss": 0.592,
+          "rerank": 3.43
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 23,
+          "faiss": 0.383,
+          "rerank": 0.66
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 43,
+          "faiss": 0.465,
+          "rerank": 0.08
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 43,
+          "faiss": 0.451,
+          "rerank": -0.18
+        }
+      ],
+      "latency": 0.41
+    },
+    {
+      "question": "What rules govern data anonymization and user privacy protection in this text?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 1.4963279962539673,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 58,
+          "faiss": 0.524,
+          "rerank": 1.5
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.475,
+          "rerank": -2.06
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.426,
+          "rerank": -2.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.467,
+          "rerank": -2.95
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 22,
+          "faiss": 0.453,
+          "rerank": -4.38
+        }
+      ],
+      "latency": 0.4
+    },
+    {
+      "question": "What specific provisions are outlined in Article 2(2)(c)?",
+      "category": "stress-test",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 1.1552441120147705,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.419,
+          "rerank": 1.16
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 22,
+          "faiss": 0.453,
+          "rerank": 0.77
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 47,
+          "faiss": 0.389,
+          "rerank": -0.16
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 45,
+          "faiss": 0.441,
+          "rerank": -0.22
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 125,
+          "faiss": 0.456,
+          "rerank": -0.7
+        }
+      ],
+      "latency": 0.41
+    },
+    {
+      "question": "Is a controller allowed to charge a fee for responding to a data access request?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.471070766448975,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.479,
+          "rerank": 4.47
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.454,
+          "rerank": 3.02
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 12,
+          "faiss": 0.451,
+          "rerank": 0.47
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 25,
+          "faiss": 0.433,
+          "rerank": 0.0
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.439,
+          "rerank": -2.19
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "When was Regulation (EU) 2016/679 adopted and when was its Corrigendum published in the Official Journal?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 3.69014573097229,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.62,
+          "rerank": 3.69
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 123,
+          "faiss": 0.483,
+          "rerank": -0.11
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.534,
+          "rerank": -0.11
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 78,
+          "faiss": 0.556,
+          "rerank": -0.14
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.479,
+          "rerank": -1.47
+        }
+      ],
+      "latency": 0.43
+    },
+    {
+      "question": "Under Article 9(1), what categories of data are NOT permitted to be processed as standard data?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 6.35950231552124,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.69,
+          "rerank": 6.36
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.686,
+          "rerank": 4.78
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.658,
+          "rerank": 3.81
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 58,
+          "faiss": 0.618,
+          "rerank": 3.31
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.639,
+          "rerank": 3.24
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "If a non-EU business tracks user habits of people living in France on its app, does GDPR apply to them and do they need parental consent for 14-year-olds?",
+      "category": "stress-test",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 2,
+      "top_rerank": -5.839356899261475,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 74,
+          "faiss": 0.462,
+          "rerank": -5.84
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.521,
+          "rerank": -5.86
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.453,
+          "rerank": -6.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.455,
+          "rerank": -6.48
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.406,
+          "rerank": -6.99
+        }
+      ],
+      "latency": 0.39
+    },
+    {
+      "question": "What are the six principles relating to processing of personal data listed under Article 5(1)?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 8.297473907470703,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.764,
+          "rerank": 8.3
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.729,
+          "rerank": 8.18
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.606,
+          "rerank": 5.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.678,
+          "rerank": 5.53
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.663,
+          "rerank": 4.88
+        }
+      ],
+      "latency": 0.43
+    },
+    {
+      "question": "What condition applies regarding the burden of proof when a controller claims a data subject's request is manifestly unfounded?",
+      "category": "stress-test",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 5.5665202140808105,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.5,
+          "rerank": 5.57
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.402,
+          "rerank": 2.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.499,
+          "rerank": 1.23
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.496,
+          "rerank": -0.08
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.475,
+          "rerank": -0.9
+        }
+      ],
+      "latency": 0.42
+    },
+    {
+      "question": "Can I take back my consent whenever I want, and does that make everything they did before illegal?",
+      "category": "stress-test",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": -5.890011310577393,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.406,
+          "rerank": -5.89
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 94,
+          "faiss": 0.35,
+          "rerank": -8.43
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 93,
+          "faiss": 0.323,
+          "rerank": -8.98
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.303,
+          "rerank": -9.22
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.304,
+          "rerank": -9.58
+        }
+      ],
+      "latency": 0.38
+    },
+    {
+      "question": "What were the administrative fine limits for data breaches under the 1995 Data Protection Directive?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 1.4914085865020752,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.641,
+          "rerank": 1.49
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 116,
+          "faiss": 0.632,
+          "rerank": 0.93
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.626,
+          "rerank": 0.8
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.594,
+          "rerank": 0.34
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 42,
+          "faiss": 0.581,
+          "rerank": 0.17
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "What is 'biometric data', what is 'genetic data', and what Article defines them?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.062106132507324,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.51,
+          "rerank": 4.06
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 48,
+          "faiss": 0.553,
+          "rerank": 1.62
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.475,
+          "rerank": 0.45
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.535,
+          "rerank": 0.08
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 48,
+          "faiss": 0.528,
+          "rerank": -0.25
+        }
+      ],
+      "latency": 0.39
+    },
+    {
+      "question": "Under what specific conditions can personal data be processed for compatibility with a secondary purpose?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.9036993980407715,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.623,
+          "rerank": 4.9
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.572,
+          "rerank": 2.41
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.629,
+          "rerank": 2.3
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 91,
+          "faiss": 0.558,
+          "rerank": 2.18
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 75,
+          "faiss": 0.588,
+          "rerank": 1.54
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "What is the maximum penalty fine for failing to comply with an order by a Supervisory Authority?",
+      "category": "stress-test",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 2.9660558700561523,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.65,
+          "rerank": 2.97
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.6,
+          "rerank": 1.45
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 70,
+          "faiss": 0.592,
+          "rerank": 1.3
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.596,
+          "rerank": 1.1
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 57,
+          "faiss": 0.406,
+          "rerank": -0.47
+        }
+      ],
+      "latency": 0.42
+    },
+    {
+      "question": "What is the weather in Paris today?",
+      "category": "out-of-scope",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -11.074874877929688,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 111,
+          "faiss": 0.052,
+          "rerank": -11.07
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 134,
+          "faiss": 0.01,
+          "rerank": -11.09
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.101,
+          "rerank": -11.09
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.022,
+          "rerank": -11.13
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.038,
+          "rerank": -11.13
+        }
+      ],
+      "latency": 0.48
+    },
+    {
+      "question": "Who won the 2024 FIFA Men's Ballon d'Or?",
+      "category": "out-of-scope",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -10.852072715759277,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.103,
+          "rerank": -10.85
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.132,
+          "rerank": -10.94
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.106,
+          "rerank": -10.94
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.085,
+          "rerank": -11.03
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 121,
+          "faiss": 0.108,
+          "rerank": -11.07
+        }
+      ],
+      "latency": 0.47
+    },
+    {
+      "question": "How do I configure a PostgreSQL database connection in Python using SQLAlchemy?",
+      "category": "out-of-scope",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -10.966293334960938,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.114,
+          "rerank": -10.97
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.134,
+          "rerank": -10.97
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 101,
+          "faiss": 0.076,
+          "rerank": -11.05
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 59,
+          "faiss": 0.095,
+          "rerank": -11.07
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 100,
+          "faiss": 0.096,
+          "rerank": -11.1
+        }
+      ],
+      "latency": 0.39
+    },
+    {
+      "question": "What is the stock price of Apple Inc. today?",
+      "category": "out-of-scope",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -11.085951805114746,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 111,
+          "faiss": 0.068,
+          "rerank": -11.09
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 68,
+          "faiss": 0.051,
+          "rerank": -11.1
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 27,
+          "faiss": 0.114,
+          "rerank": -11.11
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 115,
+          "faiss": 0.132,
+          "rerank": -11.13
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.028,
+          "rerank": -11.14
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "Tell me about the requirements.",
+      "category": "ambiguous",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -3.871263027191162,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 55,
+          "faiss": 0.322,
+          "rerank": -3.87
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 76,
+          "faiss": 0.325,
+          "rerank": -4.36
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 27,
+          "faiss": 0.236,
+          "rerank": -5.49
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.316,
+          "rerank": -5.75
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 130,
+          "faiss": 0.339,
+          "rerank": -5.86
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "What are the rules regarding consent?",
+      "category": "ambiguous",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": 0.15531587600708008,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.487,
+          "rerank": 0.16
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 94,
+          "faiss": 0.414,
+          "rerank": -1.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.442,
+          "rerank": -1.85
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 94,
+          "faiss": 0.384,
+          "rerank": -2.37
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 36,
+          "faiss": 0.356,
+          "rerank": -2.91
+        }
+      ],
+      "latency": 0.35
+    },
+    {
+      "question": "How does the law deal with exceptions?",
+      "category": "ambiguous",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -2.8794407844543457,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 27,
+          "faiss": 0.299,
+          "rerank": -2.88
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.342,
+          "rerank": -3.86
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 110,
+          "faiss": 0.28,
+          "rerank": -5.23
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.313,
+          "rerank": -6.6
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.285,
+          "rerank": -6.97
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "How much was the GDPR fine imposed on Meta by the Irish Data Protection Commission in 2023?",
+      "category": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -0.26822179555892944,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.574,
+          "rerank": -0.27
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 71,
+          "faiss": 0.554,
+          "rerank": -2.58
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.514,
+          "rerank": -2.85
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.559,
+          "rerank": -3.01
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.484,
+          "rerank": -3.44
+        }
+      ],
+      "latency": 0.39
+    },
+    {
+      "question": "What does the California Consumer Privacy Act say about the right to opt out of the sale of personal information?",
+      "category": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -4.893265724182129,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.346,
+          "rerank": -4.89
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.401,
+          "rerank": -5.33
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.402,
+          "rerank": -5.68
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.476,
+          "rerank": -5.93
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.436,
+          "rerank": -6.28
+        }
+      ],
+      "latency": 0.37
+    },
+    {
+      "question": "What fines has the French CNIL imposed for cookie consent violations?",
+      "category": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -5.14228630065918,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.543,
+          "rerank": -5.14
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 116,
+          "faiss": 0.495,
+          "rerank": -6.2
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 42,
+          "faiss": 0.471,
+          "rerank": -6.82
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 116,
+          "faiss": 0.478,
+          "rerank": -7.1
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 115,
+          "faiss": 0.483,
+          "rerank": -7.19
+        }
+      ],
+      "latency": 0.35
+    },
+    {
+      "question": "How many high-risk AI systems have been registered in the EU database so far?",
+      "category": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": 5.13006067276001,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.727,
+          "rerank": 5.13
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 81,
+          "faiss": 0.717,
+          "rerank": 4.78
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 100,
+          "faiss": 0.709,
+          "rerank": 4.72
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 92,
+          "faiss": 0.66,
+          "rerank": 4.61
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 100,
+          "faiss": 0.748,
+          "rerank": 4.49
+        }
+      ],
+      "latency": 0.39
+    },
+    {
+      "question": "And how does the same article define 'processing'?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "How does Article 4(1) define 'processing'?",
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.402320861816406,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.667,
+          "rerank": 4.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.605,
+          "rerank": 4.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.604,
+          "rerank": 3.81
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.616,
+          "rerank": 3.55
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.576,
+          "rerank": 3.09
+        }
+      ],
+      "latency": 1.05
+    },
+    {
+      "question": "And how long must they keep the automatically generated logs?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "How long must providers of high-risk AI systems keep the automatically generated logs?",
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 9.797174453735352,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 64,
+          "faiss": 0.76,
+          "rerank": 9.8
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 68,
+          "faiss": 0.611,
+          "rerank": 7.25
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 65,
+          "faiss": 0.562,
+          "rerank": 6.71
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 62,
+          "faiss": 0.551,
+          "rerank": 3.89
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 59,
+          "faiss": 0.684,
+          "rerank": 3.73
+        }
+      ],
+      "latency": 1.14
+    },
+    {
+      "question": "Can Member States lower it, and down to what age?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "Can Member States lower the general age threshold for a child's valid consent in relation to information society services, and if so, down to what age?",
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 6.750792980194092,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.728,
+          "rerank": 6.75
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.469,
+          "rerank": -7.21
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.49,
+          "rerank": -7.65
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.413,
+          "rerank": -7.96
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.491,
+          "rerank": -8.14
+        }
+      ],
+      "latency": 1.12
+    },
+    {
+      "question": "What is the purpose of the first one?",
+      "category": "factual",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "What is the purpose of the first function of the NIST AI RMF Core?",
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 5.723912239074707,
+      "retrieved": [
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 24,
+          "faiss": 0.718,
+          "rerank": 5.72
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 30,
+          "faiss": 0.648,
+          "rerank": 5.09
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 46,
+          "faiss": 0.731,
+          "rerank": 4.71
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 36,
+          "faiss": 0.659,
+          "rerank": 4.58
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 46,
+          "faiss": 0.675,
+          "rerank": 4.58
+        }
+      ],
+      "latency": 1.07
+    }
+  ]
+}

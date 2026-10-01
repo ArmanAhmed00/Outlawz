@@ -10,7 +10,7 @@ def expected_pages(q):
 def first_hit_rank(results, expected):
     """1 if the first retrieved chunk is correct, 2 if the second... None if missed."""
     for rank, r in enumerate(results, start=1):
-        if (r["source"], r["page"]) in expected:
+        if any((r["source"], p) in expected for p in r.get("pages", [r["page"]])):
             return rank
     return None
 

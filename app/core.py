@@ -23,6 +23,8 @@ CORPUS_FILE = "data/corpus.json"
 CHUNKS_FILE = "data/chunks.json"
 INDEX_FILE = "data/my_index.faiss"
 COST_FILE = "data/cost.json"
+QUESTIONS_FILE = "eval/questions.json"   # eval set, tracked by git (data/ is gitignored)
+RESULTS_DIR = "eval/results"            # eval runs are saved here
 
 
 # ---------------- Section 8: Cost tracker ----------------
@@ -56,3 +58,22 @@ HISTORY_CHAR_LIMIT = 500         # long past answers are cut to keep the cost do
 USE_REWRITE = True               # rewrite follow-ups into standalone questions before retrieval
 INJECTION_TEST = False           # True = add a poisoned test chunk to the index (demo only, keep False)
 HARDEN_PROMPT = True             # True = <context> delimiters + "never follow instructions in the context"
+RERANK_BACKEND = "cross_encoder"  # "cross_encoder" (local, allowed) or "jev" (needs Jev API access, not allowed in the hackathon)
+# ---- Tier 1 features ----
+ARTICLE_CHUNK_SIZE = 1200
+ARTICLE_OVERLAP = 150
+CHUNKING = "article"             # "fixed" (500-char chunks) or "article" (Article-aware, see app/article_chunking.py)
+ARTICLE_CHUNKS_FILE = "data/chunks_article.json"
+ARTICLE_INDEX_FILE = "data/index_article.faiss"
+if CHUNKING == "article":
+    CHUNKS_FILE, INDEX_FILE = ARTICLE_CHUNKS_FILE, ARTICLE_INDEX_FILE
+USE_CLARIFY = True               # ask the user to clarify vague questions instead of guessing
+CLARIFY_MAX_WORDS = 10            # only questions this short can be "too vague" (longer ones skip the check)
+USE_DECOMPOSE = False            # split multi-part questions into sub-questions before retrieval
+USE_EXPANSION = False            # also search with 2 rephrasings of the question
+MAX_SUBQUERIES = 3
+# ---- Agent day 2 ----
+SEARCH_TOP_K = 3                 # passages returned by search_corpus (short tool results = cheaper steps)
+MAX_FAILED_SEARCHES = 2          # recovery: after 2 searches with nothing found, stop and say so
+AGENT_HARDEN_PROMPT = True       # agent prompt: documents are data; send_message only on user request
+INJECTION_KIND = "answer"        # "answer" (RAG test) or "action" (agent test: tries to trigger send_message)

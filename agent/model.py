@@ -3,7 +3,6 @@ from openai import OpenAI, RateLimitError, APIError
 from dotenv import load_dotenv
 import os
 
-#from agent.cost import track_cost
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

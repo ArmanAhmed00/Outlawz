@@ -6,7 +6,7 @@ import sys, json
 sys.path.insert(0, ".")
 
 import faiss
-from app.core import REFUSAL, INDEX_FILE, CHUNKS_FILE
+from app.core import REFUSAL, INDEX_FILE, CHUNKS_FILE, QUESTIONS_FILE, RESULTS_DIR
 from app.search.retrieval import retrieve
 from app.generation.generate_answer import safe_chat, answer_question
 
@@ -34,7 +34,7 @@ def judge_faithfulness(question, answer, context):
 
 
 # Load eval set
-with open("data/questions.json", encoding="utf-8") as f:
+with open(QUESTIONS_FILE, encoding="utf-8") as f:
     questions = json.load(f)
 
 # Load index and chunks
@@ -90,6 +90,6 @@ if total_with_chunks:
 if total_out_of_scope:
     print(f"Correct refusals (out-of-scope): {refusals_ok}/{total_out_of_scope}")
 
-with open("data/eval_results.json", "w", encoding="utf-8") as f:
+with open(f"{RESULTS_DIR}/evaluate_results.json", "w", encoding="utf-8") as f:
     json.dump(results_log, f, ensure_ascii=False, indent=2)
-print("Saved data/eval_results.json")
+print(f"Saved {RESULTS_DIR}/evaluate_results.json")

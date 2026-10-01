@@ -1,5 +1,6 @@
 # Run with: streamlit run app/app.py  (from the project root)
 import sys, json, re
+from datetime import datetime
 from collections import Counter
 from pathlib import Path
 
@@ -19,11 +20,18 @@ import faiss
 from app.core import INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS, get_total_cost
 from agent.dispatcher import build_tool_functions
 from agent.loop import run_agent
+from app.core import USE_CLARIFY
+from app.generation.clarify import check_clarity
 from app.eval.injection import add_injection_chunk
 from app.generation.suggest import suggest_followups
-from agent.tools.schemas import calculator_schema, search_corpus_schema, quote_exact_schema
+from app.export.chat_export import chat_to_pdf, chat_to_doc
+from app.export.teams_export import post_chat_to_teams
+from agent.tools.schemas import ALL_TOOLS
+from agent.tools import messaging
+from app.search.retrieval import retrieve
+from app.generation.confidence import is_confident
 
-TOOLS = [calculator_schema, search_corpus_schema, quote_exact_schema]
+TOOLS = ALL_TOOLS
 
 INDEX_FILE = ROOT / _INDEX
 CHUNKS_FILE = ROOT / _CHUNKS
@@ -40,6 +48,9 @@ TOOL_LABELS = {
     "search_corpus": (":material/search:", "Searched the documents"),
     "quote_exact": (":material/format_quote:", "Checked the exact text"),
     "calculator": (":material/calculate:", "Calculated"),
+    "get_article": (":material/article:", "Read the full article"),
+    "define_term": (":material/menu_book:", "Looked up the official definition"),
+    "send_message": (":material/send:", "Proposed a Teams message"),
 }
 
 EXAMPLES = [
@@ -88,6 +99,29 @@ def cited_sources(trace):
         elif t["tool"] == "search_corpus":
             found += [(s, int(p)) for s, p in re.findall(r"^\[(\S+) p\.(\d+)", t["result"], re.M)]
     return list(dict.fromkeys(found))
+
+
+
+def chat_turns(messages):
+    """Pair each question with its answer and the pages it used, for the export."""
+    turns = []
+    for user, bot in zip(messages[::2], messages[1::2]):
+        if user["role"] != "user" or bot["role"] != "assistant":
+            continue
+        sources = [f"{short_name(s)} p.{p}" for s, p in cited_sources(bot.get("trace", []))]
+        turns.append({"question": user["content"], "answer": plain_answer(bot["content"]),
+                      "sources": sources})
+    return turns
+
+
+@st.cache_data(show_spinner=False)
+def export_pdf(turns_json):
+    return chat_to_pdf(json.loads(turns_json))
+
+
+@st.cache_data(show_spinner=False)
+def export_doc(turns_json):
+    return chat_to_doc(json.loads(turns_json))
 
 
 def show_steps(trace):
@@ -169,8 +203,25 @@ if not (INDEX_FILE.exists() and CHUNKS_FILE.exists()):
 index, chunks = load_index()
 tool_functions = build_tool_functions(index, chunks)
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+# ---------------- Chats: short-term memory, kept until the page is refreshed ----------------
+def new_chat():
+    """Start an empty chat; drop old chats that were never used."""
+    chats = st.session_state.chats
+    for cid in [c for c, chat in chats.items() if not chat["messages"]]:
+        del chats[cid]
+    st.session_state.chat_counter += 1
+    cid = st.session_state.chat_counter
+    chats[cid] = {"title": "New chat", "messages": []}
+    st.session_state.current_chat = cid
+
+
+if "chats" not in st.session_state:
+    st.session_state.chats = {}          # id -> {"title": str, "messages": [...]}
+    st.session_state.chat_counter = 0
+    new_chat()
+
+current_chat = st.session_state.chats[st.session_state.current_chat]
+st.session_state.messages = current_chat["messages"]  # same list: appending updates the chat
 
 # ---------------- Sidebar ----------------
 with st.sidebar:
@@ -179,8 +230,19 @@ with st.sidebar:
 
     if st.button("New chat", icon=":material/add_comment:", use_container_width=True,
                  disabled=not st.session_state.messages):
-        st.session_state.messages = []
+        new_chat()
         st.rerun()
+
+    used = {cid: chat for cid, chat in st.session_state.chats.items() if chat["messages"]}
+    if used:
+        st.markdown("### Chats")
+        st.caption("Kept until you refresh the page")
+        for cid, chat in reversed(list(used.items())):   # newest first
+            active = cid == st.session_state.current_chat
+            if st.button(chat["title"], key=f"chat{cid}", icon=":material/chat_bubble:",
+                         use_container_width=True, type="primary" if active else "secondary"):
+                st.session_state.current_chat = cid
+                st.rerun()
 
     st.markdown("### Documents")
     counts = Counter(c["source"] for c in chunks)
@@ -192,7 +254,10 @@ with st.sidebar:
     st.markdown(
         ":material/search: Search the documents  \n"
         ":material/format_quote: Quote a page exactly  \n"
-        ":material/calculate: Calculator"
+        ":material/calculate: Calculator  \n"
+        ":material/article: Full article by number  \n"
+        ":material/menu_book: Official definitions  \n"
+        ":material/send: Send to Teams (needs your approval)"
     )
 
     st.markdown("### Team spend")
@@ -219,6 +284,23 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"], avatar=AVATARS[msg["role"]]):
         if msg["role"] == "assistant":
             show_answer(msg["content"], msg.get("trace", []))
+            if msg.get("proposal"):                       # human-in-the-loop for send_message
+                with st.container(border=True):
+                    st.markdown(":material/send: **Message proposed for Teams**")
+                    st.info(msg["proposal"])
+                    status_text = msg.get("proposal_status")
+                    if status_text:
+                        st.caption(status_text)
+                    else:
+                        ok_col, no_col, _ = st.columns([1, 1, 3])
+                        if ok_col.button("Approve & send", key=f"approve{id(msg)}", type="primary"):
+                            ok, detail = messaging.post_to_teams(msg["proposal"])
+                            msg["proposal_status"] = (f"Sent to Teams ({detail}). Check the channel to confirm it arrived."
+                                                      if ok else f"Not sent: {detail}")
+                            st.rerun()
+                        if no_col.button("Reject", key=f"reject{id(msg)}"):
+                            msg["proposal_status"] = "Rejected by you: nothing was sent."
+                            st.rerun()
             if msg is st.session_state.messages[-1] and msg.get("suggestions"):
                 st.caption("Follow-up questions")
                 for j, sug in enumerate(msg["suggestions"]):
@@ -228,10 +310,36 @@ for msg in st.session_state.messages:
         else:
             st.markdown(msg["content"])
 
+# ---------------- Download the chat (after 2+ answers) ----------------
+n_answers = sum(m["role"] == "assistant" for m in st.session_state.messages)
+if n_answers >= 2:
+    turns_json = json.dumps(chat_turns(st.session_state.messages), ensure_ascii=False)
+    stamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+    with st.container(border=True):
+        st.caption(f":material/download: Download or share this conversation ({n_answers} answers, with sources)")
+        c1, c2, c3, _ = st.columns([1, 1, 1, 1])
+        c1.download_button("PDF", data=export_pdf(turns_json), file_name=f"outlawz_chat_{stamp}.pdf",
+                           mime="application/pdf", icon=":material/picture_as_pdf:",
+                           use_container_width=True, on_click="ignore")
+        c2.download_button("Word", data=export_doc(turns_json), file_name=f"outlawz_chat_{stamp}.doc",
+                           mime="application/msword", icon=":material/description:",
+                           use_container_width=True, on_click="ignore")
+        with c3.popover("Teams", icon=":material/send:", use_container_width=True):
+            st.markdown(f"Post this whole conversation ({n_answers} answers) to the team's Teams channel?")
+            st.caption("Everyone in the channel will see it.")
+            if st.button("Send to Teams", key=f"teams_send_{n_answers}", type="primary", use_container_width=True):
+                ok, detail = post_chat_to_teams(json.loads(turns_json))
+                if ok:
+                    st.toast(f"Conversation sent to Teams ({detail}). Check the channel.", icon=":material/check_circle:")
+                else:
+                    st.toast(f"Not sent: {detail}", icon=":material/error:")
+
 question = st.chat_input("Ask a legal question…") or clicked
 if question:
     examples.empty()
     st.session_state.messages.append({"role": "user", "content": question})
+    if current_chat["title"] == "New chat":
+        current_chat["title"] = question if len(question) <= 40 else question[:37] + "..."
     with st.chat_message("user", avatar=AVATARS["user"]):
         st.markdown(question)
 
@@ -246,11 +354,16 @@ if question:
                     status.markdown(f"{icon} {label} · `{step['arguments']}`")
 
             trace = LiveTrace()
-            answer = run_agent(question, TOOLS, tool_functions, verbose=False, trace=trace,
+            # ask back only for vague questions that ARE on topic; off-topic ones are refused by the agent
+            in_scope = USE_CLARIFY and is_confident(retrieve(question, index, chunks))
+            clarification = check_clarity(question, st.session_state.messages[:-1]) if in_scope else None
+            messaging.PROPOSALS.clear()
+            answer = clarification or run_agent(question, TOOLS, tool_functions, verbose=False, trace=trace,
                                history=st.session_state.messages[:-1])
             trace = list(trace)
             status.update(label=f"Done · {len(trace)} step{'s' if len(trace) != 1 else ''}", expanded=False,
                           state="complete")
         st.session_state.messages.append({"role": "assistant", "content": answer, "trace": trace,
-                                          "suggestions": suggest_followups(question, answer)})
+                                          "suggestions": suggest_followups(question, answer),
+                                          "proposal": messaging.PROPOSALS[-1] if messaging.PROPOSALS else None})
     st.rerun()  # redraw the full history (sources, steps) and hide the examples

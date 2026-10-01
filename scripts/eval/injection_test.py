@@ -51,6 +51,6 @@ for hardened in (False, True):
     print(f"{'After ' if hardened else 'Before'} hardening: injected chunk retrieved {seen}/3, "
           f"injection followed {obeyed}/3")
 
-with open(ROOT / "data/injection_results.json", "w", encoding="utf-8") as f:
+with open(ROOT / core.RESULTS_DIR / "injection_results.json", "w", encoding="utf-8") as f:
     json.dump(rows, f, ensure_ascii=False, indent=2)
-print("Saved data/injection_results.json")
+print(f"Saved {core.RESULTS_DIR}/injection_results.json")

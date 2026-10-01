@@ -1,0 +1,2419 @@
+{
+  "config": {
+    "full": true,
+    "rerank": true,
+    "bm25": true,
+    "rewrite": true,
+    "decompose": false,
+    "expand": false,
+    "clarify": true,
+    "index": "data/index_article.faiss"
+  },
+  "summary": {
+    "n": 36,
+    "recall@1": 0.75,
+    "recall@3": 0.8333333333333334,
+    "recall@5": 0.8611111111111112,
+    "mrr": 0.7939814814814814,
+    "latency": 2.391914893617021
+  },
+  "results": [
+    {
+      "question": "What regulation lays down rules relating to the protection of natural persons with regard to the processing of personal data and repeals Directive 95/46/EC?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 4,
+      "top_rerank": 7.636055946350098,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 2,
+          "faiss": 0.616,
+          "rerank": 7.64
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.642,
+          "rerank": 6.43
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 76,
+          "faiss": 0.702,
+          "rerank": 6.28
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.661,
+          "rerank": 6.2
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.616,
+          "rerank": 5.68
+        }
+      ],
+      "answer": "The regulation that lays down rules relating to the protection of natural persons with regard to the processing of personal data and repeals Directive 95/46/EC is Regulation (EU) 2016/679, also known as the General Data Protection Regulation (GDPR) (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.1).",
+      "expected_answer": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.17
+    },
+    {
+      "question": "What is the definition of 'personal data' under Article 4(1)?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.332822799682617,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.704,
+          "rerank": 7.33
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.644,
+          "rerank": 5.46
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.626,
+          "rerank": 5.35
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.648,
+          "rerank": 5.25
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.612,
+          "rerank": 5.12
+        }
+      ],
+      "answer": "The definition of 'personal data' under Article 4(1) of the GDPR is: \"any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.\" (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.3)",
+      "expected_answer": "'personal data' means any information relating to an identified or identifiable natural person ('data subject'); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.05
+    },
+    {
+      "question": "Who is defined as a 'controller' in Article 4(7)?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 1.8014694452285767,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.558,
+          "rerank": 1.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.574,
+          "rerank": 1.28
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.562,
+          "rerank": 0.71
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.479,
+          "rerank": 0.67
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 26,
+          "faiss": 0.536,
+          "rerank": -0.12
+        }
+      ],
+      "answer": "I don't have enough information to answer this. The provided context does not include the definition of 'controller' from Article 4(7) of the GDPR.",
+      "expected_answer": "The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 2.35
+    },
+    {
+      "question": "What is the general age threshold for a child's valid consent in relation to information society services under Article 8(1)?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.27293586730957,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.777,
+          "rerank": 7.27
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.445,
+          "rerank": -1.85
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.482,
+          "rerank": -4.45
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.427,
+          "rerank": -4.64
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.421,
+          "rerank": -5.05
+        }
+      ],
+      "answer": "The general age threshold for a child's valid consent in relation to information society services under Article 8(1) is at least 16 years old. If the child is below the age of 16, the processing of their personal data shall be lawful only if consent is given or authorized by the holder of parental responsibility over the child. Member States may set a lower age, but it cannot be below 13 years. This information is sourced from the first part of the context provided (CELEX_02016R0679-20160504_EN_TXT.pdf p.9).",
+      "expected_answer": "At least 16 years old (though Member States may provide for a lower age, provided it is not below 13 years).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.35
+    },
+    {
+      "question": "What timeframe does the controller have under Article 12(3) to provide information on action taken on a request to the data subject?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 8.050346374511719,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 12,
+          "faiss": 0.739,
+          "rerank": 8.05
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.633,
+          "rerank": 5.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 12,
+          "faiss": 0.675,
+          "rerank": 4.54
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.638,
+          "rerank": 2.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.627,
+          "rerank": 2.33
+        }
+      ],
+      "answer": "Under Article 12(3), the controller must provide information on action taken on a request to the data subject without undue delay and in any event within one month of receipt of the request. This period may be extended by two further months if necessary, taking into account the complexity and number of the requests. The controller must inform the data subject of any such extension within one month of receipt of the request, along with the reasons for the delay. (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.12)",
+      "expected_answer": "Without undue delay and in any event within one month of receipt of the request (extendable by two further months where necessary).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.56
+    },
+    {
+      "question": "According to Article 2(2), which types of processing activities fall outside the material scope of this Regulation?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.307811737060547,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 2,
+          "faiss": 0.757,
+          "rerank": 7.31
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 2,
+          "faiss": 0.715,
+          "rerank": 4.6
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.653,
+          "rerank": 3.23
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 45,
+          "faiss": 0.591,
+          "rerank": 2.18
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.604,
+          "rerank": 2.04
+        }
+      ],
+      "answer": "According to Article 2(2) of the GDPR, the following types of processing activities fall outside the material scope of this Regulation:\n\n(a) Processing of personal data in the course of an activity which falls outside the scope of Union law;\n(b) Processing by the Member States when carrying out activities which fall within the scope of Chapter 2 of Title V of the TEU;\n(c) Processing by a natural person in the course of a purely personal or household activity;\n(d) Processing by competent authorities for the purposes of the prevention, investigation, detection or prosecution of criminal offences or the execution of criminal penalties, including the safeguarding against and the prevention of threats to public security.\n\nThis information is sourced from the provided context, specifically from the section on GDPR Article 2 - Material scope.",
+      "expected_answer": "Processing (a) outside the scope of Union law; (b) by Member States under Chapter 2 Title V TEU; (c) by a natural person in purely personal or household activity; (d) by competent authorities for prevention, investigation, detection or prosecution of criminal offences/penalties.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.98
+    },
+    {
+      "question": "What directive is referred to in Article 4(25) to define an 'information society service'?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 2,
+      "top_rerank": 3.0175423622131348,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.458,
+          "rerank": 3.02
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.408,
+          "rerank": 1.3
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.473,
+          "rerank": -0.44
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.548,
+          "rerank": -1.88
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 77,
+          "faiss": 0.372,
+          "rerank": -2.02
+        }
+      ],
+      "answer": "The directive referred to in Article 4(25) to define an 'information society service' is Directive (EU) 2015/1535 of the European Parliament and of the Council. This is mentioned in the context provided.",
+      "expected_answer": "Directive (EU) 2015/1535 of the European Parliament and of the Council.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.07
+    },
+    {
+      "question": "Under Article 10, when can personal data relating to criminal convictions and offences be processed?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 9.52424430847168,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.777,
+          "rerank": 9.52
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.589,
+          "rerank": 6.55
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 31,
+          "faiss": 0.523,
+          "rerank": 5.92
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 24,
+          "faiss": 0.43,
+          "rerank": 5.15
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 28,
+          "faiss": 0.539,
+          "rerank": 4.57
+        }
+      ],
+      "answer": "Under Article 10 of the GDPR, personal data relating to criminal convictions and offences can be processed only under the control of an official authority or when the processing is authorized by Union or Member State law that provides for appropriate safeguards for the rights and freedoms of data subjects. Additionally, any comprehensive register of criminal convictions must be kept only under the control of an official authority (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.11).",
+      "expected_answer": "Only under the control of official authority or when authorised by Union or Member State law providing for appropriate safeguards.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.95
+    },
+    {
+      "question": "What is the requirement under Article 19 regarding recipient notification when data is rectified or erased?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 7.384324550628662,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 19,
+          "faiss": 0.709,
+          "rerank": 7.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.561,
+          "rerank": 1.94
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.531,
+          "rerank": 1.28
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.509,
+          "rerank": 0.97
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.547,
+          "rerank": 0.53
+        }
+      ],
+      "answer": "Under Article 19 of the GDPR, the controller is required to communicate any rectification or erasure of personal data, or restriction of processing, to each recipient to whom the personal data have been disclosed. This obligation applies unless it proves impossible or involves disproportionate effort. Additionally, the controller must inform the data subject about those recipients if the data subject requests it (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.19).",
+      "expected_answer": "The controller shall communicate any rectification, erasure, or restriction of processing to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.32
+    },
+    {
+      "question": "According to Article 21(2), what right does a data subject have when personal data are processed for direct marketing purposes?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 9.401485443115234,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.737,
+          "rerank": 9.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.653,
+          "rerank": 6.74
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.625,
+          "rerank": 6.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.646,
+          "rerank": 5.87
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.597,
+          "rerank": 5.8
+        }
+      ],
+      "answer": "According to Article 21(2) of the GDPR, the data subject has the right to object at any time to the processing of personal data concerning him or her for direct marketing purposes. This includes profiling to the extent that it is related to such direct marketing. If the data subject objects to processing for direct marketing purposes, the personal data shall no longer be processed for such purposes. This information is sourced from the provided context.",
+      "expected_answer": "The data subject shall have the right to object at any time to processing of personal data concerning him or her for such marketing, including profiling related to such direct marketing.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.8
+    },
+    {
+      "question": "What is 'pseudonymisation' according to Article 4(5)?",
+      "category": "factual",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 5.551752090454102,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.569,
+          "rerank": 5.55
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 52,
+          "faiss": 0.467,
+          "rerank": -0.82
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 52,
+          "faiss": 0.437,
+          "rerank": -1.67
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 58,
+          "faiss": 0.469,
+          "rerank": -2.07
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 23,
+          "faiss": 0.474,
+          "rerank": -2.53
+        }
+      ],
+      "answer": "According to Article 4(5) of the GDPR, 'pseudonymisation' means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information. This additional information must be kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person. (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.4)",
+      "expected_answer": "The processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and subject to technical and organizational measures.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 5.22
+    },
+    {
+      "question": "How are the territorial scope conditions detailed across establishment in the EU versus non-EU controllers targeting data subjects in the EU?",
+      "category": "cross-reference",
+      "sub_type": "adjacent_chunks",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 2.2400951385498047,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.709,
+          "rerank": 2.24
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 35,
+          "faiss": 0.489,
+          "rerank": -2.6
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 36,
+          "faiss": 0.466,
+          "rerank": -2.65
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 40,
+          "faiss": 0.492,
+          "rerank": -3.72
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 90,
+          "faiss": 0.457,
+          "rerank": -4.37
+        }
+      ],
+      "answer": "The territorial scope conditions for the processing of personal data are detailed as follows:\n\n1. **Establishment in the EU**: The GDPR applies to the processing of personal data in the context of the activities of an establishment of a controller or a processor in the Union, regardless of whether the processing takes place in the Union or not (Article 3(1)).\n\n2. **Non-EU Controllers Targeting Data Subjects in the EU**: The GDPR also applies to the processing of personal data of data subjects who are in the Union by a controller or processor not established in the Union, under two conditions:\n   - If the processing activities are related to the offering of goods or services to such data subjects in the Union, irrespective of whether a payment is required (Article 3(2)(a)).\n   - If the processing activities involve monitoring the behavior of data subjects as far as their behavior takes place within the Union (Article 3(2)(b)).\n\nIn summary, the GDPR applies to both EU-based controllers/processors and non-EU controllers/processors targeting EU data subjects, with specific conditions outlined for the latter. This information is sourced from the GDPR Article 3 (CELEX_02016R0679-20160504_EN_TXT.pdf p.3).",
+      "expected_answer": "Article 3(1) applies to processing in the context of an establishment in the Union regardless of where processing takes place. Article 3(2) applies to non-EU controllers offering goods/services to EU data subjects or monitoring their behavior in the EU.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 4.09
+    },
+    {
+      "question": "How do the lawful grounds for processing standard personal data differ from the conditions required to process special categories of personal data?",
+      "category": "cross-reference",
+      "sub_type": "same_document",
+      "difficulty": "hard",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.996068000793457,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.622,
+          "rerank": 5.0
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.638,
+          "rerank": 4.97
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.652,
+          "rerank": 4.83
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.652,
+          "rerank": 4.54
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.635,
+          "rerank": 4.51
+        }
+      ],
+      "answer": "The lawful grounds for processing standard personal data differ from the conditions required to process special categories of personal data in several key ways:\n\n1. **General Lawfulness (Article 6)**: For standard personal data, processing is lawful if it meets one of the conditions outlined in Article 6 of the GDPR, such as consent, contractual necessity, legal obligation, vital interests, public task, or legitimate interests. \n\n2. **Special Categories (Article 9)**: In contrast, the processing of special categories of personal data (which includes data revealing racial or ethnic origin, political opinions, religious beliefs, health data, etc.) is generally prohibited unless specific conditions are met. These conditions include explicit consent from the data subject, necessity for employment law obligations, protection of vital interests, and processing for substantial public interest, among others.\n\n3. **Stricter Requirements**: The conditions for processing special categories of personal data are stricter and more limited compared to the grounds for standard personal data. For example, processing special categories requires additional safeguards to protect the fundamental rights and interests of the data subjects.\n\n4. **Explicit Consent**: While consent can be a lawful ground for processing both standard and special categories of data, for special categories, the consent must be explicit, and there are additional legal restrictions that may prevent the lifting of prohibitions even with consent.\n\nIn summary, while standard personal data can be processed under a broader range of lawful grounds, special categories of personal data require more stringent conditions and safeguards",
+      "expected_answer": "Standard processing requires meeting at least one ground under Article 6(1) (e.g. consent, contract, legal obligation). Special category processing is prohibited under Article 9(1) unless an exception in Article 9(2) applies (e.g. explicit consent, employment law obligations, vital interests).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.74
+    },
+    {
+      "question": "What differences exist between information provided when personal data are collected directly from the data subject versus obtained from a third party?",
+      "category": "cross-reference",
+      "sub_type": "same_document",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.8240532875061035,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.581,
+          "rerank": 4.82
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.544,
+          "rerank": 3.46
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.562,
+          "rerank": 2.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.552,
+          "rerank": 2.36
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.542,
+          "rerank": 2.15
+        }
+      ],
+      "answer": "The differences between the information provided when personal data are collected directly from the data subject (Article 13) versus when it is obtained from a third party (Article 14) are as follows:\n\n1. **Categories of Information**:\n   - When data is collected directly from the data subject, the controller must provide information including the identity and contact details of the controller, the purposes of processing, the legal basis for processing, and the right to lodge a complaint, among others (Article 13).\n   - When data is obtained from a third party, the controller must provide similar information but also includes the categories of personal data concerned and the source from which the personal data originate (Article 14).\n\n2. **Source of Data**:\n   - Article 13 does not require the controller to disclose the source of the personal data since it is collected directly from the data subject.\n   - Article 14 specifically requires the controller to inform the data subject about the source of the personal data and whether it came from publicly accessible sources.\n\n3. **Categories of Personal Data**:\n   - Article 13 does not mention the need to specify categories of personal data since the data is directly provided by the data subject.\n   - Article 14 requires the controller to inform the data subject about the categories of personal data that have been obtained.\n\n4. **Timing of Information Provision**:\n   - Both articles require that the information be provided within a reasonable period, but the specifics may vary based on the context of",
+      "expected_answer": "Under Article 13 (collected from data subject), information includes statutory/contractual necessity and consequences of failing to provide data. Under Article 14 (not obtained from data subject), information includes categories of data concerned and source/public accessibility of data.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 4.54
+    },
+    {
+      "question": "How is scientific research processing treated across core principles, lawful purposes, and data subject rights to object?",
+      "category": "cross-reference",
+      "sub_type": "same_document",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 3.842644214630127,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.582,
+          "rerank": 3.84
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 74,
+          "faiss": 0.609,
+          "rerank": 3.39
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.501,
+          "rerank": 2.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.618,
+          "rerank": 2.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.555,
+          "rerank": 2.17
+        }
+      ],
+      "answer": "In the context of the General Data Protection Regulation (GDPR), scientific research processing is treated with specific considerations across core principles, lawful purposes, and data subject rights to object as follows:\n\n1. **Core Principles**: \n   - According to Article 5, personal data must be processed lawfully, fairly, and transparently. For scientific or historical research purposes, further processing of personal data is not considered incompatible with the initial purposes if it is done in accordance with Article 89(1). This means that while the data must still adhere to principles such as data minimization and purpose limitation, there are allowances for processing data for research purposes under certain conditions (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.6).\n\n2. **Lawful Purposes**: \n   - Article 89(1) specifies that processing for scientific or historical research purposes or statistical purposes must be subject to appropriate safeguards to protect the rights and freedoms of the data subjects. This includes implementing technical and organizational measures, such as pseudonymization, to ensure compliance with the GDPR (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.74).\n\n3. **Data Subject Rights to Object**: \n   - Article 21 grants data subjects the right to object to the processing of their personal data on grounds relating to their particular situation, particularly when the processing is based on certain legal grounds (points (e) or (",
+      "expected_answer": "Article 5(1)(b) allows further processing for scientific research as compatible with initial purposes; Article 9(2)(j) exempts special categories for scientific research; Article 21(6) allows data subjects to object to research processing unless necessary for public interest tasks.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 4.36
+    },
+    {
+      "question": "Where in the document are the conditions and rights concerning automated individual decision-making, including profiling, defined?",
+      "category": "cross-reference",
+      "sub_type": "repeated",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 5.540577411651611,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.705,
+          "rerank": 5.54
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.695,
+          "rerank": 5.47
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.567,
+          "rerank": 4.12
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.535,
+          "rerank": 2.01
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.484,
+          "rerank": 1.48
+        }
+      ],
+      "answer": "The conditions and rights concerning automated individual decision-making, including profiling, are defined in GDPR Article 22, which is referenced on pages 21 of the document. This article outlines the rights of the data subject not to be subject to decisions based solely on automated processing, the exceptions to this right, and the measures that data controllers must implement to safeguard the data subject's rights. Additionally, related information can be found in Articles 13, 14, and 15, which discuss the information to be provided to data subjects regarding automated decision-making and their rights in this context.",
+      "expected_answer": "Definition in Article 4(4) (p. 4), data subject notification obligations in Article 13(2)(f) / Article 14(2)(g) (p. 14, 15), right of access in Article 15(1)(h) (p. 17), and general prohibition/exceptions in Article 22 (p. 21).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.61
+    },
+    {
+      "question": "What brief mention is made of Member State limitations on specific data types compared to the detailed rules provided in Article 9?",
+      "category": "cross-reference",
+      "sub_type": "summary_vs_detail",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 2.6019182205200195,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.628,
+          "rerank": 2.6
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.515,
+          "rerank": 0.79
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.557,
+          "rerank": 0.7
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.556,
+          "rerank": -0.23
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.566,
+          "rerank": -1.19
+        }
+      ],
+      "answer": "Member States may maintain or introduce further conditions, including limitations, regarding the processing of genetic data, biometric data, or data concerning health (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.11). This is a brief mention compared to the detailed rules provided in Article 9, which outlines specific prohibitions and conditions under which the processing of special categories of personal data is allowed.",
+      "expected_answer": "Article 9(1)-(2) provides detailed prohibitions and specific exceptions for special categories, while Article 9(4) gives a summary clause allowing Member States to introduce further conditions or limitations regarding genetic data, biometric data, or health data.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.48
+    },
+    {
+      "question": "How do the rules governing data portability interact with the right to erasure?",
+      "category": "cross-reference",
+      "sub_type": "adjacent_chunks",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 3,
+      "top_rerank": 1.99631667137146,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.598,
+          "rerank": 2.0
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.612,
+          "rerank": 1.09
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 19,
+          "faiss": 0.598,
+          "rerank": 0.61
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 14,
+          "faiss": 0.444,
+          "rerank": -0.21
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 15,
+          "faiss": 0.452,
+          "rerank": -0.22
+        }
+      ],
+      "answer": "The rules governing data portability and the right to erasure interact in the following way:\n\n1. The right to data portability, as stated in Article 20, allows the data subject to receive their personal data in a structured, commonly used, and machine-readable format and to transmit that data to another controller without hindrance, provided certain conditions are met (e.g., processing based on consent or a contract, and carried out by automated means).\n\n2. However, the exercise of the right to data portability is explicitly stated to be without prejudice to the right to erasure outlined in Article 17. This means that the right to data portability does not affect the data subject's ability to request the erasure of their personal data.\n\n3. Additionally, the right to data portability does not apply to processing that is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller, which is also a consideration in the context of the right to erasure.\n\nIn summary, while both rights are available to the data subject, they can be exercised independently, and the existence of one does not negate the other. (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.19)",
+      "expected_answer": "Article 20(3) explicitly establishes that the exercise of the right to data portability under Article 20(1) shall be without prejudice to Article 17 (right to erasure).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.45
+    },
+    {
+      "question": "How are restrictions by legislative measures specified regarding scope, subject matter, and controller safeguards?",
+      "category": "cross-reference",
+      "sub_type": "adjacent_chunks",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.79714298248291,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.559,
+          "rerank": 4.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 22,
+          "faiss": 0.592,
+          "rerank": 3.43
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 23,
+          "faiss": 0.383,
+          "rerank": 0.66
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 43,
+          "faiss": 0.465,
+          "rerank": 0.08
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 43,
+          "faiss": 0.451,
+          "rerank": -0.18
+        }
+      ],
+      "answer": "Could you clarify your question? Which document are you referring to: GDPR, EU AI Act, or NIST AI Risk Management Framework?",
+      "expected_answer": "Article 23(1) specifies the permissible scope (national security, defence, public security, etc.), while Article 23(2) lists mandatory detailed provisions including processing purposes, data categories, restriction scope, and safeguards against abuse.",
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.98
+    },
+    {
+      "question": "What rules govern data anonymization and user privacy protection in this text?",
+      "category": "stress-test",
+      "sub_type": "paraphrased",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 1.4963279962539673,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 58,
+          "faiss": 0.524,
+          "rerank": 1.5
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.475,
+          "rerank": -2.06
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.426,
+          "rerank": -2.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.467,
+          "rerank": -2.95
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 22,
+          "faiss": 0.453,
+          "rerank": -4.38
+        }
+      ],
+      "answer": "Could you clarify your question? Which document are you referring to: GDPR, EU AI Act, or NIST AI Risk Management Framework?",
+      "expected_answer": "The text explicitly defines 'pseudonymisation' (Article 4(5)), but does not define or specify full anonymization rules within these pages.",
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.22
+    },
+    {
+      "question": "What specific provisions are outlined in Article 2(2)(c)?",
+      "category": "stress-test",
+      "sub_type": "exact_term",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 1.1552441120147705,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.419,
+          "rerank": 1.16
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 22,
+          "faiss": 0.453,
+          "rerank": 0.77
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 47,
+          "faiss": 0.389,
+          "rerank": -0.16
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 45,
+          "faiss": 0.441,
+          "rerank": -0.22
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 125,
+          "faiss": 0.456,
+          "rerank": -0.7
+        }
+      ],
+      "answer": "I don't have enough information to answer this. The provided context does not include the content of Article 2(2)(c) from the EU AI Act.",
+      "expected_answer": "Article 2(2)(c) states that the Regulation does not apply to processing of personal data 'by a natural person in the course of a purely personal or household activity'.",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 2.08
+    },
+    {
+      "question": "Is a controller allowed to charge a fee for responding to a data access request?",
+      "category": "stress-test",
+      "sub_type": "yes_no",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.471070766448975,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.479,
+          "rerank": 4.47
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.454,
+          "rerank": 3.02
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 12,
+          "faiss": 0.451,
+          "rerank": 0.47
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 25,
+          "faiss": 0.433,
+          "rerank": 0.0
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.439,
+          "rerank": -2.19
+        }
+      ],
+      "answer": "Yes, a controller is allowed to charge a reasonable fee for responding to a data access request if the requests from a data subject are manifestly unfounded or excessive, particularly due to their repetitive nature. The fee should take into account the administrative costs of providing the information or communication or taking the action requested. This is stated in GDPR Article 12, paragraph 5(a) (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.13).",
+      "expected_answer": "Generally no, information shall be provided free of charge under Article 12(5). However, if requests are manifestly unfounded or excessive (especially repetitive), the controller may charge a reasonable fee or refuse to act.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.64
+    },
+    {
+      "question": "When was Regulation (EU) 2016/679 adopted and when was its Corrigendum published in the Official Journal?",
+      "category": "stress-test",
+      "sub_type": "temporal",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 3.69014573097229,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.62,
+          "rerank": 3.69
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 123,
+          "faiss": 0.483,
+          "rerank": -0.11
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.534,
+          "rerank": -0.11
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 78,
+          "faiss": 0.556,
+          "rerank": -0.14
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.479,
+          "rerank": -1.47
+        }
+      ],
+      "answer": "Regulation (EU) 2016/679 was adopted on 27 April 2016. Its Corrigendum was published in the Official Journal on 23 May 2018 (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.1).",
+      "expected_answer": "Adopted on 27 April 2016; Corrigendum published on 23 May 2018 (OJ L 127).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.26
+    },
+    {
+      "question": "Under Article 9(1), what categories of data are NOT permitted to be processed as standard data?",
+      "category": "stress-test",
+      "sub_type": "negation",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 6.35950231552124,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.69,
+          "rerank": 6.36
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.686,
+          "rerank": 4.78
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.658,
+          "rerank": 3.81
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 58,
+          "faiss": 0.618,
+          "rerank": 3.31
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.639,
+          "rerank": 3.24
+        }
+      ],
+      "answer": "Under Article 9(1) of the GDPR, the following categories of personal data are NOT permitted to be processed as standard data:\n\n1. Data revealing racial or ethnic origin\n2. Political opinions\n3. Religious or philosophical beliefs\n4. Trade union membership\n5. Genetic data\n6. Biometric data for the purpose of uniquely identifying a natural person\n7. Data concerning health\n8. Data concerning a natural person's sex life or sexual orientation\n\nThis information is sourced from CELEX_02016R0679-20160504_EN_TXT.pdf, p.10.",
+      "expected_answer": "Personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, genetic data, biometric data for unique identification, data concerning health, or data concerning a natural person's sex life or sexual orientation.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.57
+    },
+    {
+      "question": "If a non-EU business tracks user habits of people living in France on its app, does GDPR apply to them and do they need parental consent for 14-year-olds?",
+      "category": "stress-test",
+      "sub_type": "multi_hop",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 2,
+      "top_rerank": -5.839356899261475,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 74,
+          "faiss": 0.462,
+          "rerank": -5.84
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.521,
+          "rerank": -5.86
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.453,
+          "rerank": -6.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 21,
+          "faiss": 0.455,
+          "rerank": -6.48
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.406,
+          "rerank": -6.99
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": "Yes, GDPR applies under Article 3(2)(b) (monitoring behavior in Union). For a 14-year-old, processing is lawful under Article 8(1) only with parental consent/authorization, unless Member State law permits lower age (down to 13).",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.74
+    },
+    {
+      "question": "What are the six principles relating to processing of personal data listed under Article 5(1)?",
+      "category": "stress-test",
+      "sub_type": "table_list",
+      "difficulty": "medium",
+      "priority": true,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 8.297473907470703,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.764,
+          "rerank": 8.3
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.729,
+          "rerank": 8.18
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.606,
+          "rerank": 5.8
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.678,
+          "rerank": 5.53
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.663,
+          "rerank": 4.88
+        }
+      ],
+      "answer": "The six principles relating to the processing of personal data listed under Article 5(1) of the GDPR are:\n\n1. **Lawfulness, fairness and transparency**: Personal data shall be processed lawfully, fairly, and in a transparent manner in relation to the data subject.\n2. **Purpose limitation**: Personal data shall be collected for specified, explicit, and legitimate purposes and not further processed in a manner that is incompatible with those purposes.\n3. **Data minimisation**: Personal data shall be adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed.\n4. **Accuracy**: Personal data shall be accurate and, where necessary, kept up to date; every reasonable step must be taken to ensure that inaccurate personal data are erased or rectified without delay.\n5. **Storage limitation**: Personal data shall be kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed.\n6. **Integrity and confidentiality**: Personal data shall be processed in a manner that ensures appropriate security of the personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction, or damage.\n\n(Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.6-7)",
+      "expected_answer": "(a) Lawfulness, fairness and transparency; (b) Purpose limitation; (c) Data minimisation; (d) Accuracy; (e) Storage limitation; (f) Integrity and confidentiality.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 4.27
+    },
+    {
+      "question": "What condition applies regarding the burden of proof when a controller claims a data subject's request is manifestly unfounded?",
+      "category": "stress-test",
+      "sub_type": "edge_of_chunk",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 5.5665202140808105,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 13,
+          "faiss": 0.5,
+          "rerank": 5.57
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.402,
+          "rerank": 2.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.499,
+          "rerank": 1.23
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.496,
+          "rerank": -0.08
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.475,
+          "rerank": -0.9
+        }
+      ],
+      "answer": "The controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request. This means that if the controller claims that a data subject's request is manifestly unfounded, it is the controller's responsibility to provide evidence to support that claim. This information is sourced from GDPR Article 12, specifically paragraph 5.",
+      "expected_answer": "Under Article 12(5), the controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.4
+    },
+    {
+      "question": "Can I take back my consent whenever I want, and does that make everything they did before illegal?",
+      "category": "stress-test",
+      "sub_type": "language_variation",
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": -5.890011310577393,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.406,
+          "rerank": -5.89
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 94,
+          "faiss": 0.35,
+          "rerank": -8.43
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 93,
+          "faiss": 0.323,
+          "rerank": -8.98
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 7,
+          "faiss": 0.303,
+          "rerank": -9.22
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.304,
+          "rerank": -9.58
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": "Under Article 7(3), you have the right to withdraw consent at any time. However, the withdrawal shall not affect the lawfulness of processing based on consent before its withdrawal.",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.51
+    },
+    {
+      "question": "What were the administrative fine limits for data breaches under the 1995 Data Protection Directive?",
+      "category": "stress-test",
+      "sub_type": "on_topic_unanswerable",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 1.4914085865020752,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.641,
+          "rerank": 1.49
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 116,
+          "faiss": 0.632,
+          "rerank": 0.93
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.626,
+          "rerank": 0.8
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.594,
+          "rerank": 0.34
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 42,
+          "faiss": 0.581,
+          "rerank": 0.17
+        }
+      ],
+      "answer": "Could you clarify your question? Are you asking about the specific fine limits or the general framework for penalties?",
+      "expected_answer": "The provided text contains Directive 95/46/EC repeal references but does not specify fine limits under the 1995 Directive.",
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.29
+    },
+    {
+      "question": "What is 'biometric data', what is 'genetic data', and what Article defines them?",
+      "category": "stress-test",
+      "sub_type": "multi_part",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.062106132507324,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.51,
+          "rerank": 4.06
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 48,
+          "faiss": 0.553,
+          "rerank": 1.62
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.475,
+          "rerank": 0.45
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.535,
+          "rerank": 0.08
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 48,
+          "faiss": 0.528,
+          "rerank": -0.25
+        }
+      ],
+      "answer": "'Biometric data' is defined as personal data resulting from specific technical processing relating to the physical, physiological, or behavioural characteristics of a natural person, which allow or confirm the unique identification of that natural person, such as facial images or dactyloscopic data. This definition is found in GDPR Article 4, specifically in paragraph (14).\n\n'Genetic data' is defined as personal data relating to the inherited or acquired genetic characteristics of a natural person which give unique information about the physiology or the health of that natural person and which result, in particular, from an analysis of a biological sample from the natural person in question. This definition is also found in GDPR Article 4, specifically in paragraph (13). \n\n(Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.4)",
+      "expected_answer": "Genetic data: personal data relating to inherited or acquired genetic characteristics (Article 4(13)). Biometric data: personal data from specific technical processing relating to physical/physiological/behavioural characteristics (Article 4(14)). Both defined in Article 4 (p. 5).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 4.48
+    },
+    {
+      "question": "Under what specific conditions can personal data be processed for compatibility with a secondary purpose?",
+      "category": "stress-test",
+      "sub_type": "table_list",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.9036993980407715,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.623,
+          "rerank": 4.9
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.572,
+          "rerank": 2.41
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.629,
+          "rerank": 2.3
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 91,
+          "faiss": 0.558,
+          "rerank": 2.18
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 75,
+          "faiss": 0.588,
+          "rerank": 1.54
+        }
+      ],
+      "answer": "Personal data can be processed for a secondary purpose if the following conditions are met, as outlined in GDPR Article 6:\n\n1. **Link Between Purposes**: There must be a link between the purposes for which the personal data were initially collected and the purposes of the intended further processing (Article 6(a)).\n\n2. **Context of Collection**: The context in which the personal data were collected should be considered, particularly regarding the relationship between the data subjects and the controller (Article 6(b)).\n\n3. **Nature of Personal Data**: The nature of the personal data must be taken into account, especially if special categories of personal data or data related to criminal convictions and offenses are involved (Article 6(c)).\n\n4. **Consequences for Data Subjects**: The possible consequences of the intended further processing for the data subjects should be evaluated (Article 6(d)).\n\n5. **Safeguards**: There must be appropriate safeguards in place, which may include measures such as encryption or pseudonymisation (Article 6(e)).\n\nThese conditions help ensure that the further processing of personal data is compatible with the original purpose for which the data was collected. (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.8)",
+      "expected_answer": "Under Article 6(4), taking into account links between purposes, context, nature of data (Article 9/10), possible consequences, and existence of appropriate safeguards (encryption/pseudonymisation).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.51
+    },
+    {
+      "question": "What is the maximum penalty fine for failing to comply with an order by a Supervisory Authority?",
+      "category": "stress-test",
+      "sub_type": "on_topic_unanswerable",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 2.9660558700561523,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.65,
+          "rerank": 2.97
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.6,
+          "rerank": 1.45
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 70,
+          "faiss": 0.592,
+          "rerank": 1.3
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.596,
+          "rerank": 1.1
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 57,
+          "faiss": 0.406,
+          "rerank": -0.47
+        }
+      ],
+      "answer": "The maximum penalty fine for failing to comply with an order by a Supervisory Authority is up to 20,000,000 EUR, or in the case of an undertaking, up to 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher. This is stated in GDPR Article 83, paragraph 6.",
+      "expected_answer": "The provided text excerpt (pages 1-23) covers Articles 1 to 24 and does not contain the penalty fine amounts.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 2.69
+    },
+    {
+      "question": "What is the weather in Paris today?",
+      "category": "out-of-scope",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -11.074874877929688,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 111,
+          "faiss": 0.052,
+          "rerank": -11.07
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 134,
+          "faiss": 0.01,
+          "rerank": -11.09
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.101,
+          "rerank": -11.09
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.022,
+          "rerank": -11.13
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.038,
+          "rerank": -11.13
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": null,
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.82
+    },
+    {
+      "question": "Who won the 2024 FIFA Men's Ballon d'Or?",
+      "category": "out-of-scope",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -10.852072715759277,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.103,
+          "rerank": -10.85
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.132,
+          "rerank": -10.94
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 1,
+          "faiss": 0.106,
+          "rerank": -10.94
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.085,
+          "rerank": -11.03
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 121,
+          "faiss": 0.108,
+          "rerank": -11.07
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": null,
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.48
+    },
+    {
+      "question": "How do I configure a PostgreSQL database connection in Python using SQLAlchemy?",
+      "category": "out-of-scope",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -10.966293334960938,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.114,
+          "rerank": -10.97
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.134,
+          "rerank": -10.97
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 101,
+          "faiss": 0.076,
+          "rerank": -11.05
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 59,
+          "faiss": 0.095,
+          "rerank": -11.07
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 100,
+          "faiss": 0.096,
+          "rerank": -11.1
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": null,
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.42
+    },
+    {
+      "question": "What is the stock price of Apple Inc. today?",
+      "category": "out-of-scope",
+      "sub_type": null,
+      "difficulty": "easy",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -11.085951805114746,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 111,
+          "faiss": 0.068,
+          "rerank": -11.09
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 68,
+          "faiss": 0.051,
+          "rerank": -11.1
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 27,
+          "faiss": 0.114,
+          "rerank": -11.11
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 115,
+          "faiss": 0.132,
+          "rerank": -11.13
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.028,
+          "rerank": -11.14
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": null,
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.37
+    },
+    {
+      "question": "Tell me about the requirements.",
+      "category": "ambiguous",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -3.871263027191162,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 55,
+          "faiss": 0.322,
+          "rerank": -3.87
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 76,
+          "faiss": 0.325,
+          "rerank": -4.36
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 27,
+          "faiss": 0.236,
+          "rerank": -5.49
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.316,
+          "rerank": -5.75
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 130,
+          "faiss": 0.339,
+          "rerank": -5.86
+        }
+      ],
+      "answer": "Could you clarify your question? Which document are you referring to? GDPR, EU AI Act, or NIST AI Risk Management Framework?",
+      "expected_answer": null,
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.33
+    },
+    {
+      "question": "What are the rules regarding consent?",
+      "category": "ambiguous",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": 0.15531587600708008,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.487,
+          "rerank": 0.16
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 94,
+          "faiss": 0.414,
+          "rerank": -1.63
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.442,
+          "rerank": -1.85
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 94,
+          "faiss": 0.384,
+          "rerank": -2.37
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 36,
+          "faiss": 0.356,
+          "rerank": -2.91
+        }
+      ],
+      "answer": "Could you clarify your question? Which document are you referring to: GDPR, EU AI Act, or NIST AI Risk Management Framework?",
+      "expected_answer": null,
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.04
+    },
+    {
+      "question": "How does the law deal with exceptions?",
+      "category": "ambiguous",
+      "sub_type": null,
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -2.8794407844543457,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 27,
+          "faiss": 0.299,
+          "rerank": -2.88
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 10,
+          "faiss": 0.342,
+          "rerank": -3.86
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 110,
+          "faiss": 0.28,
+          "rerank": -5.23
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 11,
+          "faiss": 0.313,
+          "rerank": -6.6
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.285,
+          "rerank": -6.97
+        }
+      ],
+      "answer": "Could you clarify your question? Which law are you referring to? GDPR, EU AI Act, or NIST AI Risk Management Framework?",
+      "expected_answer": null,
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.15
+    },
+    {
+      "question": "How much was the GDPR fine imposed on Meta by the Irish Data Protection Commission in 2023?",
+      "category": "stress-test",
+      "sub_type": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -0.26822179555892944,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.574,
+          "rerank": -0.27
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 71,
+          "faiss": 0.554,
+          "rerank": -2.58
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 117,
+          "faiss": 0.514,
+          "rerank": -2.85
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.559,
+          "rerank": -3.01
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.484,
+          "rerank": -3.44
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": "Refusal: not covered by the corpus",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 1.63
+    },
+    {
+      "question": "What does the California Consumer Privacy Act say about the right to opt out of the sale of personal information?",
+      "category": "stress-test",
+      "sub_type": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -4.893265724182129,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.346,
+          "rerank": -4.89
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 16,
+          "faiss": 0.401,
+          "rerank": -5.33
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 18,
+          "faiss": 0.402,
+          "rerank": -5.68
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.476,
+          "rerank": -5.93
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 17,
+          "faiss": 0.436,
+          "rerank": -6.28
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": "Refusal: not covered by the corpus",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.52
+    },
+    {
+      "question": "What fines has the French CNIL imposed for cookie consent violations?",
+      "category": "stress-test",
+      "sub_type": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": -5.14228630065918,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 72,
+          "faiss": 0.543,
+          "rerank": -5.14
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 116,
+          "faiss": 0.495,
+          "rerank": -6.2
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 42,
+          "faiss": 0.471,
+          "rerank": -6.82
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 116,
+          "faiss": 0.478,
+          "rerank": -7.1
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 115,
+          "faiss": 0.483,
+          "rerank": -7.19
+        }
+      ],
+      "answer": "I don't have enough information to answer this.",
+      "expected_answer": "Refusal: not covered by the corpus",
+      "clarified": false,
+      "refused": true,
+      "correct": null,
+      "latency": 0.37
+    },
+    {
+      "question": "How many high-risk AI systems have been registered in the EU database so far?",
+      "category": "stress-test",
+      "sub_type": "on_topic_unanswerable",
+      "difficulty": "hard",
+      "priority": false,
+      "is_followup": false,
+      "rewritten_query": null,
+      "queries": null,
+      "has_expected": false,
+      "rank": null,
+      "top_rerank": 5.13006067276001,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 33,
+          "faiss": 0.727,
+          "rerank": 5.13
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 81,
+          "faiss": 0.717,
+          "rerank": 4.78
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 100,
+          "faiss": 0.709,
+          "rerank": 4.72
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 92,
+          "faiss": 0.66,
+          "rerank": 4.61
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 100,
+          "faiss": 0.748,
+          "rerank": 4.49
+        }
+      ],
+      "answer": "Could you clarify your question? Are you asking about the EU AI Act specifically?",
+      "expected_answer": "Refusal: not covered by the corpus",
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 1.03
+    },
+    {
+      "question": "And how does the same article define 'processing'?",
+      "category": "factual",
+      "sub_type": "follow_up",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "How does Article 4(1) define 'processing'?",
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 4.402320861816406,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 3,
+          "faiss": 0.667,
+          "rerank": 4.4
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.605,
+          "rerank": 4.38
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.604,
+          "rerank": 3.81
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 4,
+          "faiss": 0.616,
+          "rerank": 3.55
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 5,
+          "faiss": 0.576,
+          "rerank": 3.09
+        }
+      ],
+      "answer": "Under Article 4(1) of the GDPR, 'personal data' is defined as any information relating to an identified or identifiable natural person ('data subject'). An identifiable natural person is one who can be identified, directly or indirectly, particularly by reference to an identifier such as a name, an identification number, location data, an online identifier, or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural, or social identity of that natural person (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.3).\n\n'Processing' is defined in Article 4(2) as any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means. This includes activities such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure, or destruction (Source: CELEX_02016R0679-20160504_EN_TXT.pdf p.3).",
+      "expected_answer": "Any operation or set of operations performed on personal data, whether or not by automated means, such as collection, recording, organisation, storage, use, disclosure or erasure (Article 4(2)).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 4.02
+    },
+    {
+      "question": "And how long must they keep the automatically generated logs?",
+      "category": "factual",
+      "sub_type": "follow_up",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "How long must providers of high-risk AI systems keep the automatically generated logs?",
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 9.797174453735352,
+      "retrieved": [
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 64,
+          "faiss": 0.76,
+          "rerank": 9.8
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 68,
+          "faiss": 0.611,
+          "rerank": 7.25
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 65,
+          "faiss": 0.562,
+          "rerank": 6.71
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 62,
+          "faiss": 0.551,
+          "rerank": 3.89
+        },
+        {
+          "source": "OJ_L_202401689_EN_TXT.pdf",
+          "page": 59,
+          "faiss": 0.684,
+          "rerank": 3.73
+        }
+      ],
+      "answer": "Could you clarify your question? Are you asking about the EU AI Act or another regulation?",
+      "expected_answer": "For a period appropriate to the intended purpose, of at least six months, unless Union or national law provides otherwise (Article 19(1)).",
+      "clarified": true,
+      "refused": true,
+      "correct": null,
+      "latency": 2.75
+    },
+    {
+      "question": "Can Member States lower it, and down to what age?",
+      "category": "factual",
+      "sub_type": "follow_up",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "Can Member States lower the general age threshold for a child's valid consent in relation to information society services, and if so, down to what age?",
+      "queries": null,
+      "has_expected": true,
+      "rank": 1,
+      "top_rerank": 6.750792980194092,
+      "retrieved": [
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 9,
+          "faiss": 0.728,
+          "rerank": 6.75
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 8,
+          "faiss": 0.469,
+          "rerank": -7.21
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 20,
+          "faiss": 0.49,
+          "rerank": -7.65
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 6,
+          "faiss": 0.413,
+          "rerank": -7.96
+        },
+        {
+          "source": "CELEX_02016R0679-20160504_EN_TXT.pdf",
+          "page": 46,
+          "faiss": 0.491,
+          "rerank": -8.14
+        }
+      ],
+      "answer": "Yes, Member States may provide by law for a lower age for the purposes of a child's valid consent in relation to information society services, but this lower age cannot be below 13 years. This information is sourced from Article 8(1) of the GDPR.",
+      "expected_answer": "Yes, Member States may provide by law for a lower age, provided it is not below 13 years (Article 8(1)).",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.39
+    },
+    {
+      "question": "What is the purpose of the first one?",
+      "category": "factual",
+      "sub_type": "follow_up",
+      "difficulty": "medium",
+      "priority": false,
+      "is_followup": true,
+      "rewritten_query": "What is the purpose of the first function of the NIST AI RMF Core?",
+      "queries": null,
+      "has_expected": true,
+      "rank": null,
+      "top_rerank": 5.723912239074707,
+      "retrieved": [
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 24,
+          "faiss": 0.718,
+          "rerank": 5.72
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 30,
+          "faiss": 0.648,
+          "rerank": 5.09
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 46,
+          "faiss": 0.731,
+          "rerank": 4.71
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 36,
+          "faiss": 0.659,
+          "rerank": 4.58
+        },
+        {
+          "source": "NIST.AI.100-1.pdf",
+          "page": 46,
+          "faiss": 0.675,
+          "rerank": 4.58
+        }
+      ],
+      "answer": "The first function of the NIST AI RMF Core is GOVERN. Its purpose is to provide governance that informs and is infused throughout the other three functions (MAP, MEASURE, and MANAGE). It is designed to enable dialogue, understanding, and activities to manage AI risks and responsibly develop trustworthy AI systems. Governance is a cross-cutting function that helps ensure that risk management is continuous, timely, and performed throughout the AI system lifecycle (Source: NIST.AI.100-1.pdf p.24).",
+      "expected_answer": "GOVERN cultivates and implements a culture of risk management within organizations; it is cross-cutting and informs the other functions.",
+      "clarified": false,
+      "refused": false,
+      "correct": null,
+      "latency": 3.37
+    }
+  ]
+}

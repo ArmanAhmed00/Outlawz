@@ -4,11 +4,12 @@ sys.path.insert(0, ".")
 import faiss, json
 from agent.loop import run_agent
 from agent.dispatcher import build_tool_functions
-from agent.tools.schemas import calculator_schema, search_corpus_schema, quote_exact_schema
+from agent.tools.schemas import ALL_TOOLS
+import app.core as core
 
-index = faiss.read_index("data/my_index.faiss")
-chunks = json.load(open("data/chunks.json"))
-tools = [calculator_schema, search_corpus_schema, quote_exact_schema]
+index = faiss.read_index(core.INDEX_FILE)
+chunks = json.load(open(core.CHUNKS_FILE, encoding="utf-8"))
+tools = ALL_TOOLS
 tool_functions = build_tool_functions(index, chunks)
 
 
