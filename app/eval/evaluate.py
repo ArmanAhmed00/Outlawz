@@ -1,5 +1,5 @@
-# app/evaluate.py
-# Run with: python app/evaluate.py
+# app/eval/evaluate.py
+# Run with: python app/eval/evaluate.py
 # Based on "Running Your Eval Set" + Section 9 (LLM-as-judge) of the code reference.
 
 import sys, json
@@ -7,8 +7,8 @@ sys.path.insert(0, ".")
 
 import faiss
 from app.core import REFUSAL, INDEX_FILE, CHUNKS_FILE
-from app.retrieval import retrieve
-from app.generate_answer import safe_chat, answer_question
+from app.search.retrieval import retrieve
+from app.generation.generate_answer import safe_chat, answer_question
 
 USE_JUDGE = False  # set True to also check faithfulness (costs a bit more)
 

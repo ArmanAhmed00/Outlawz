@@ -19,8 +19,8 @@ import faiss
 from app.core import INDEX_FILE as _INDEX, CHUNKS_FILE as _CHUNKS, get_total_cost
 from agent.dispatcher import build_tool_functions
 from agent.loop import run_agent
-from app.injection import add_injection_chunk
-from app.suggest import suggest_followups
+from app.eval.injection import add_injection_chunk
+from app.generation.suggest import suggest_followups
 from agent.tools.schemas import calculator_schema, search_corpus_schema, quote_exact_schema
 
 TOOLS = [calculator_schema, search_corpus_schema, quote_exact_schema]
@@ -163,7 +163,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 if not (INDEX_FILE.exists() and CHUNKS_FILE.exists()):
-    st.error("Index not found. Run `python scripts/build_index.py` first.", icon=":material/error:")
+    st.error("Index not found. Run `python scripts/ingest/build_index.py` first.", icon=":material/error:")
     st.stop()
 
 index, chunks = load_index()

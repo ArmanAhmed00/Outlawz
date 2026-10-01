@@ -1,4 +1,4 @@
-# scripts/extract.py
+# scripts/ingest/extract.py
 import json
 from pathlib import Path
 import pymupdf as fitz  # PyMuPDF

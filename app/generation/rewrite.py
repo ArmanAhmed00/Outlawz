@@ -1,6 +1,6 @@
 from app.core import CHAT_MODEL, track_cost
 from app.embeddings import client
-from app.memory import recent_history
+from app.generation.memory import recent_history
 
 REWRITE_PROMPT = (
     "Rewrite the user's last question as a standalone question. Use the conversation "

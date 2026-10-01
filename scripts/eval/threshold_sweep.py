@@ -1,4 +1,4 @@
-# Usage: uv run python scripts/threshold_sweep.py [data/eval_results.json]
+# Usage: uv run python scripts/eval/threshold_sweep.py [data/eval_results.json]
 import sys, json
 
 path = sys.argv[1] if len(sys.argv) > 1 else "data/eval_results.json"
@@ -23,7 +23,7 @@ for r in sorted(rows, key=lambda r: r["top_rerank"]):
 # ---- Breakdown at the threshold currently set in app/core.py ----
 from pathlib import Path
 from collections import defaultdict
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from app.core import RERANK_THRESHOLD
 
 groups = defaultdict(lambda: [0, 0])

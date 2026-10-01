@@ -10,7 +10,7 @@ EMBED_MODEL = "text-embedding-3-small"
 CHUNK_SIZE = 500
 OVERLAP = 100
 TOP_K = 5
-MIN_SCORE = 0.30  # if the best chunk is less similar than this -> out of scope (tune with evaluate.py)
+MIN_SCORE = 0.30  # if the best chunk is less similar than this -> out of scope (tune with app/eval/evaluate.py)
 
 # Reranking: fetch FETCH_K candidates with FAISS, then a cross-encoder keeps the best TOP_K
 USE_RERANK = True
@@ -50,7 +50,7 @@ def get_total_cost():
         return json.load(f)["total"]
 USE_BM25 = True
 RRF_K = 60                       # standard RRF constant
-RERANK_THRESHOLD = -4.5          # refuse if the best reranker score is below this (tuned with scripts/threshold_sweep.py)
+RERANK_THRESHOLD = -4.5          # refuse if the best reranker score is below this (tuned with scripts/eval/threshold_sweep.py)
 MAX_HISTORY_TURNS = 2            # how many past exchanges (user + assistant) are sent to the model
 HISTORY_CHAR_LIMIT = 500         # long past answers are cut to keep the cost down
 USE_REWRITE = True               # rewrite follow-ups into standalone questions before retrieval

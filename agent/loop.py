@@ -1,7 +1,7 @@
 import json
 from agent.model import call_model
 from agent.dispatcher import run_tool
-from app.memory import recent_history
+from app.generation.memory import recent_history
 
 
 SYSTEM_PROMPT = (
@@ -37,7 +37,7 @@ def _normalize_args(args_json):
 
 def run_agent(user_message, tools, tool_functions, verbose=True, trace=False, history=None):
     """
-    trace=True   -> returns {"answer", "trace", "steps"}  (used by scripts/evaluate_agent.py)
+    trace=True   -> returns {"answer", "trace", "steps"}  (used by scripts/eval/evaluate_agent.py)
     trace=<list> -> each tool call is appended to it live, returns the answer (used by the UI)
     trace=False  -> returns the answer only
     history      -> past chat messages; the last exchanges are sent so follow-ups make sense

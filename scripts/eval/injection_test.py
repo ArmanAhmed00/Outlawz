@@ -1,18 +1,18 @@
 # Prompt injection test: 3 questions, prompt NOT hardened vs hardened.
-# Usage: uv run python scripts/injection_test.py
+# Usage: uv run python scripts/eval/injection_test.py
 import sys, json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 import app.core as core
 core.INJECTION_TEST = True  # poisoned chunk ON for this script only (core.py stays False)
 
 import faiss
-from app.injection import add_injection_chunk, INJECTION_SOURCE, INJECTION_MARKER
-from app.retrieval import retrieve
-from app.generate_answer import answer_question
+from app.eval.injection import add_injection_chunk, INJECTION_SOURCE, INJECTION_MARKER
+from app.search.retrieval import retrieve
+from app.generation.generate_answer import answer_question
 
 # 3 questions on the same topic as the poisoned chunk, so it gets retrieved
 QUESTIONS = [

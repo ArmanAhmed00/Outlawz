@@ -1,13 +1,13 @@
 # Find which (source, page) contains a phrase, to fill "expected_chunks" in questions.json.
-# Usage: uv run python scripts/find_page.py "Article 19" "logs"
+# Usage: uv run python scripts/eval/find_page.py "Article 19" "logs"
 #        (every phrase must appear on the page, case-insensitive)
 import sys, json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 phrases = [p.lower() for p in sys.argv[1:]]
 if not phrases:
-    sys.exit('Usage: python scripts/find_page.py "phrase one" ["phrase two" ...]')
+    sys.exit('Usage: python scripts/eval/find_page.py "phrase one" ["phrase two" ...]')
 
 with open(ROOT / "data/corpus.json", encoding="utf-8") as f:
     corpus = json.load(f)

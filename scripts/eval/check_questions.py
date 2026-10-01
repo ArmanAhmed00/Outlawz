@@ -1,10 +1,10 @@
 # Check data/questions.json before running the evals.
-# Usage: uv run python scripts/check_questions.py
+# Usage: uv run python scripts/eval/check_questions.py
 import json
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 with open(ROOT / "data/questions.json", encoding="utf-8") as f:
     questions = json.load(f)
 with open(ROOT / "data/corpus.json", encoding="utf-8") as f:

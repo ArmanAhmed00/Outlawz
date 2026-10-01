@@ -3,11 +3,11 @@ import time
 from app.core import CHAT_MODEL, TOP_K, MIN_SCORE, REFUSAL, track_cost
 import app.core as core
 from app.embeddings import client
-from app.retrieval import retrieve
-from app.confidence import is_confident
+from app.search.retrieval import retrieve
+from app.generation.confidence import is_confident
 from app.core import USE_REWRITE
-from app.memory import recent_history
-from app.rewrite import rewrite_query
+from app.generation.memory import recent_history
+from app.generation.rewrite import rewrite_query
 
 SYSTEM_PROMPT = (
     "You are a helpful assistant. Answer the question based ONLY "

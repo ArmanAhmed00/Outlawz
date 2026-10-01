@@ -10,11 +10,11 @@ page-level citations: the **GDPR** (Regulation (EU) 2016/679), the **EU AI Act**
 
 ```bash
 uv sync                                         # install dependencies (Python 3.12)
-uv run python scripts/build_index.py            # only once: chunk + embed + FAISS index
+uv run python scripts/ingest/build_index.py            # only once: chunk + embed + FAISS index
 uv run streamlit run app/app.py                 # web UI
-uv run python scripts/chat_rag.py               # RAG chat in the terminal (with memory)
-uv run python scripts/eval_runner.py            # eval, retrieval only (cheap)
-uv run python scripts/eval_runner.py --full     # eval with generated answers
+uv run python scripts/ask/chat_rag.py               # RAG chat in the terminal (with memory)
+uv run python scripts/eval/eval_runner.py            # eval, retrieval only (cheap)
+uv run python scripts/eval/eval_runner.py --full     # eval with generated answers
 ```
 
 ## Pipeline
@@ -54,7 +54,7 @@ one question = ~3 points.
 ## Confidence threshold (reranker score)
 
 We refuse when the cross-encoder score of the top chunk is below **-4.5** (FAISS and RRF
-scores are on other scales and not comparable). Tuned with `scripts/threshold_sweep.py` on
+scores are on other scales and not comparable). Tuned with `scripts/eval/threshold_sweep.py` on
 11 should-refuse questions (4 out-of-scope, 4 on-topic unanswerable, 3 ambiguous) and
 32 answerable ones:
 
@@ -103,8 +103,8 @@ _TODO: fill after adding the follow-up questions (see below)._
 
 | Script | What it does |
 |---|---|
-| `scripts/eval_runner.py` | Recall@1/3/5, MRR, latency, by category / difficulty, failures |
-| `scripts/threshold_sweep.py` | Correct vs wrong refusals for a range of thresholds |
-| `scripts/find_page.py` | Finds the page(s) containing a phrase, to fill `expected_chunks` |
-| `scripts/check_questions.py` | Validates `data/questions.json` |
-| `scripts/chat_rag.py` | Terminal chat with memory (shows the rewritten query) |
+| `scripts/eval/eval_runner.py` | Recall@1/3/5, MRR, latency, by category / difficulty, failures |
+| `scripts/eval/threshold_sweep.py` | Correct vs wrong refusals for a range of thresholds |
+| `scripts/eval/find_page.py` | Finds the page(s) containing a phrase, to fill `expected_chunks` |
+| `scripts/eval/check_questions.py` | Validates `data/questions.json` |
+| `scripts/ask/chat_rag.py` | Terminal chat with memory (shows the rewritten query) |

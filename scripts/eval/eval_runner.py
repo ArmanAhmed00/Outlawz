@@ -1,11 +1,11 @@
-# Retrieval only (cheap):  uv run python scripts/eval_runner.py
-# Full (with answers):     uv run python scripts/eval_runner.py --full
+# Retrieval only (cheap):  uv run python scripts/eval/eval_runner.py
+# Full (with answers):     uv run python scripts/eval/eval_runner.py --full
 # Ablation rows:           add --no-rerank and/or --no-bm25
 import sys, json, time, argparse
 from pathlib import Path
 from collections import defaultdict
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 parser = argparse.ArgumentParser()
@@ -23,10 +23,10 @@ core.USE_BM25 = not args.no_bm25
 core.USE_REWRITE = not args.no_rewrite
 
 import faiss
-from app.retrieval import retrieve
-from app.generate_answer import answer_question
-from app.metrics import expected_pages, first_hit_rank, summarize
-from app.rewrite import rewrite_query
+from app.search.retrieval import retrieve
+from app.generation.generate_answer import answer_question
+from app.eval.metrics import expected_pages, first_hit_rank, summarize
+from app.generation.rewrite import rewrite_query
 
 index = faiss.read_index(str(ROOT / core.INDEX_FILE))
 with open(ROOT / core.CHUNKS_FILE, encoding="utf-8") as f:

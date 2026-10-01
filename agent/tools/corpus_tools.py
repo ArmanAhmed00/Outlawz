@@ -1,4 +1,4 @@
-from app.retrieval import retrieve
+from app.search.retrieval import retrieve
 from app.core import MIN_SCORE
 
 def make_search_corpus(index, chunks):
