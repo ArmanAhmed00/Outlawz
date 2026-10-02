@@ -1,5 +1,5 @@
 # Run with: streamlit run app/app.py  (from the project root)
-import sys, json, re
+import sys, json, re, random
 from datetime import datetime
 from collections import Counter
 from pathlib import Path
@@ -53,11 +53,32 @@ TOOL_LABELS = {
     "send_message": (":material/send:", "Proposed a Teams message"),
 }
 
-EXAMPLES = [
-    "What is the definition of personal data under the GDPR?",
-    "What are the obligations for providers of high-risk AI systems?",
-    "What is 4% of a €250M annual turnover?",
-    "What are the four functions of the NIST AI RMF?",
+# one random question per group is shown on the start screen (new pick on every page refresh)
+EXAMPLE_POOL = [
+    [   # GDPR
+        "What is the definition of personal data under the GDPR?",
+        "When must a personal data breach be notified to the supervisory authority?",
+        "What is the right to erasure under the GDPR?",
+        "What is 'pseudonymisation' according to the GDPR?",
+    ],
+    [   # EU AI Act
+        "What are the obligations for providers of high-risk AI systems?",
+        "Which AI practices are prohibited under the EU AI Act?",
+        "How long must providers keep the logs of high-risk AI systems?",
+        "What transparency obligations apply to chatbots under the AI Act?",
+    ],
+    [   # calculator
+        "What is 4% of a €250M annual turnover?",
+        "What is 7% of a €500M worldwide turnover?",
+        "If a company's turnover is €1.2 billion, what is 4% of it?",
+        "What is 2% of a €80M turnover, and is it more than €10M?",
+    ],
+    [   # NIST AI RMF
+        "What are the four functions of the NIST AI RMF?",
+        "What are the characteristics of trustworthy AI in the NIST AI RMF?",
+        "What does the GOVERN function cover in the NIST AI RMF?",
+        "How does the NIST AI RMF define risk?",
+    ],
 ]
 
 
@@ -274,7 +295,9 @@ if not st.session_state.messages:
     with examples.container(border=True):
         st.markdown("**Try one of these**")
         cols = st.columns(2)
-        for i, example in enumerate(EXAMPLES):
+        if "examples" not in st.session_state:   # picked once per session, so a click keeps its label
+            st.session_state.examples = [random.choice(group) for group in EXAMPLE_POOL]
+        for i, example in enumerate(st.session_state.examples):
             if cols[i % 2].button(example, key=f"ex{i}", use_container_width=True):
                 clicked = example
 
